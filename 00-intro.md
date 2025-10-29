@@ -38,7 +38,7 @@ To make it easier to interact with R, we will use RStudio. To function correctly
 RStudio needs R and therefore both need to be installed on your computer.
 
 
-## Why learn R?
+## Why learn R 🤶?
 
 There are numerous reasons to learn and use R. In the following we will point 
 out a few of them.
@@ -89,7 +89,7 @@ R is designed for data analysis. It comes with special data structures and data
 types that make handling of missing data and statistical factors convenient.
 
 R can connect to spreadsheets, databases, and many other data formats, on your
-computer or on the web.
+computer or on the web 🎅.
 
 ### R produces high-quality graphics
 
