@@ -43,26 +43,29 @@ We will now demonstrate how to import tabular data using `read_csv()`.
 
 ## Presentation of the movieSerie dataset
 
-The data set we will import is movieSerie.csv. It is list of movies and series 
-from IMDB and the movie database. Each row holds information for a single movie 
-or serie, and the columns represent:
+The data set we will import is xmas_movies.csv. It is list of Christmas movies IMDB. Each row holds information about a single movie 
+, and the columns represent:
 
 | column_name | description |
 | ----------- | ----------- |
-|id | Added to provide a unique Id for each observation. |
 | title | The title of the movie or serie |
+| rating | Information about which age group the movie is suitable for |
+| runtime | How long the movie is |
+| imdb_rating | The score of the movie or serie in the IMDB database |
+| tmdb_rating | The score of the movie or serie in the movie database |
+| 
 | type | Wether the row represents a movie or a serie |
 | description | A short description of the movie or serie |
 | genre | What genre the movie or serie is |
 | release_year | When the movie or serie was released |
 |age_certification| What age is the movie or serie appropriate for |
-|runtime| How long the movie or serie is |
+
 |seasons| How many seasons there are in a serie |
 |imdb_id| A unique Id from the IMDB database|
 |imdb_score| The score of the movie or serie in the IMDB database|
 |imdb_votes| The number of votes in the IMDB database |
 |tmdb_popularity| The popularity of the movie or serie in the movie database |
-|tmdb_score| The score of the movie or serie in the movie database |
+
 
 
 ## Importing data
@@ -103,7 +106,7 @@ After this we can read in the data set.
 
 
 ``` r
-movieSerie <- read_csv("data/movieSerie.csv", na = c("NA", "NULL"))
+xmas_movies <- read_csv("data/xmas_movies.csv", na = c("NA", "NULL"))
 ```
 
 :::: callout
@@ -138,28 +141,16 @@ has been loaded, we can see the content of the data frame by typing its name:
 
 ``` r
 movieSerie
+```
+
+``` error
+Error: object 'movieSerie' not found
+```
+
+``` r
 ## Try also
 ## view(movieSerie)
 ## head(movieSerie)
-```
-
-``` output
-# A tibble: 5,850 × 14
-   id       title type  genre description release_year age_certification runtime
-   <chr>    <chr> <chr> <chr> <chr>              <dbl> <chr>               <dbl>
- 1 ts300399 Five… SHOW  docu… "This coll…         1945 "TV-MA"                51
- 2 tm84618  Taxi… MOVIE drama "A mentall…         1976 "R"                   114
- 3 tm154986 Deli… MOVIE drama "Intent on…         1972 "R"                   109
- 4 tm127384 Mont… MOVIE fant… "King Arth…         1975 "PG"                   91
- 5 tm120801 The … MOVIE war   "12 Americ…         1967 ""                    150
- 6 ts22164  Mont… SHOW  come… "A British…         1969 "TV-14"                30
- 7 tm70993  Life… MOVIE come… "Brian Coh…         1979 "R"                    94
- 8 tm14873  Dirt… MOVIE thri… "When a ma…         1971 "R"                   102
- 9 tm119281 Bonn… MOVIE crime "In the 19…         1967 "R"                   110
-10 tm98978  The … MOVIE roma… "Two small…         1980 "R"                   104
-# ℹ 5,840 more rows
-# ℹ 6 more variables: seasons <dbl>, imdb_id <chr>, imdb_score <dbl>,
-#   imdb_votes <dbl>, tmdb_popularity <dbl>, tmdb_score <dbl>
 ```
 
 
@@ -173,8 +164,8 @@ the data is read using `read_csv()`, it is stored in an object of class
 class(movieSerie)
 ```
 
-``` output
-[1] "spec_tbl_df" "tbl_df"      "tbl"         "data.frame" 
+``` error
+Error: object 'movieSerie' not found
 ```
 
 As a `tibble`, the type of data included in each column is listed in an
@@ -239,11 +230,8 @@ want from it. Row numbers come first, followed by column numbers.
 movieSerie[1, 1]
 ```
 
-``` output
-# A tibble: 1 × 1
-  id      
-  <chr>   
-1 ts300399
+``` error
+Error: object 'movieSerie' not found
 ```
 
 ``` r
@@ -251,11 +239,8 @@ movieSerie[1, 1]
 movieSerie[1, 6]
 ```
 
-``` output
-# A tibble: 1 × 1
-  release_year
-         <dbl>
-1         1945
+``` error
+Error: object 'movieSerie' not found
 ```
 
 ``` r
@@ -263,8 +248,8 @@ movieSerie[1, 6]
 movieSerie[[1]] %>% head()
 ```
 
-``` output
-[1] "ts300399" "tm84618"  "tm154986" "tm127384" "tm120801" "ts22164" 
+``` error
+Error: object 'movieSerie' not found
 ```
 
 ``` r
@@ -272,21 +257,8 @@ movieSerie[[1]] %>% head()
 movieSerie[1]
 ```
 
-``` output
-# A tibble: 5,850 × 1
-   id      
-   <chr>   
- 1 ts300399
- 2 tm84618 
- 3 tm154986
- 4 tm127384
- 5 tm120801
- 6 ts22164 
- 7 tm70993 
- 8 tm14873 
- 9 tm119281
-10 tm98978 
-# ℹ 5,840 more rows
+``` error
+Error: object 'movieSerie' not found
 ```
 
 ``` r
@@ -294,13 +266,8 @@ movieSerie[1]
 movieSerie[1:3, 7]
 ```
 
-``` output
-# A tibble: 3 × 1
-  age_certification
-  <chr>            
-1 TV-MA            
-2 R                
-3 R                
+``` error
+Error: object 'movieSerie' not found
 ```
 
 ``` r
@@ -308,18 +275,17 @@ movieSerie[1:3, 7]
 movieSerie[3, ]
 ```
 
-``` output
-# A tibble: 1 × 14
-  id       title  type  genre description release_year age_certification runtime
-  <chr>    <chr>  <chr> <chr> <chr>              <dbl> <chr>               <dbl>
-1 tm154986 Deliv… MOVIE drama Intent on …         1972 R                     109
-# ℹ 6 more variables: seasons <dbl>, imdb_id <chr>, imdb_score <dbl>,
-#   imdb_votes <dbl>, tmdb_popularity <dbl>, tmdb_score <dbl>
+``` error
+Error: object 'movieSerie' not found
 ```
 
 ``` r
 ## equivalent to head_movieSerie <- head(movieSerie)
 head_movieSerie <- movieSerie[1:6, ]
+```
+
+``` error
+Error: object 'movieSerie' not found
 ```
 
 `:` is a special function that creates numeric vectors of integers in increasing
@@ -332,46 +298,16 @@ You can also exclude certain indices of a data frame using the "`-`" sign:
 movieSerie[, -1]          # The whole tibble, except the first column
 ```
 
-``` output
-# A tibble: 5,850 × 13
-   title  type  genre description release_year age_certification runtime seasons
-   <chr>  <chr> <chr> <chr>              <dbl> <chr>               <dbl>   <dbl>
- 1 Five … SHOW  docu… "This coll…         1945 "TV-MA"                51       1
- 2 Taxi … MOVIE drama "A mentall…         1976 "R"                   114      NA
- 3 Deliv… MOVIE drama "Intent on…         1972 "R"                   109      NA
- 4 Monty… MOVIE fant… "King Arth…         1975 "PG"                   91      NA
- 5 The D… MOVIE war   "12 Americ…         1967 ""                    150      NA
- 6 Monty… SHOW  come… "A British…         1969 "TV-14"                30       4
- 7 Life … MOVIE come… "Brian Coh…         1979 "R"                    94      NA
- 8 Dirty… MOVIE thri… "When a ma…         1971 "R"                   102      NA
- 9 Bonni… MOVIE crime "In the 19…         1967 "R"                   110      NA
-10 The B… MOVIE roma… "Two small…         1980 "R"                   104      NA
-# ℹ 5,840 more rows
-# ℹ 5 more variables: imdb_id <chr>, imdb_score <dbl>, imdb_votes <dbl>,
-#   tmdb_popularity <dbl>, tmdb_score <dbl>
+``` error
+Error: object 'movieSerie' not found
 ```
 
 ``` r
 movieSerie[-c(7:131), ]   # Equivalent to head(interviews)
 ```
 
-``` output
-# A tibble: 5,725 × 14
-   id       title type  genre description release_year age_certification runtime
-   <chr>    <chr> <chr> <chr> <chr>              <dbl> <chr>               <dbl>
- 1 ts300399 Five… SHOW  docu… "This coll…         1945 "TV-MA"                51
- 2 tm84618  Taxi… MOVIE drama "A mentall…         1976 "R"                   114
- 3 tm154986 Deli… MOVIE drama "Intent on…         1972 "R"                   109
- 4 tm127384 Mont… MOVIE fant… "King Arth…         1975 "PG"                   91
- 5 tm120801 The … MOVIE war   "12 Americ…         1967 ""                    150
- 6 ts22164  Mont… SHOW  come… "A British…         1969 "TV-14"                30
- 7 tm187791 In t… MOVIE drama "Veteran S…         1993 "R"                   128
- 8 tm113576 Litt… MOVIE drama "With thei…         1994 "PG"                  115
- 9 tm65686  U.S.… MOVIE thri… "U.S. Mars…         1998 "PG-13"               131
-10 ts8570   Barn… SHOW  come… "Barney & …         1992 "TV-G"                 28
-# ℹ 5,715 more rows
-# ℹ 6 more variables: seasons <dbl>, imdb_id <chr>, imdb_score <dbl>,
-#   imdb_votes <dbl>, tmdb_popularity <dbl>, tmdb_score <dbl>
+``` error
+Error: object 'movieSerie' not found
 ```
 
 `tibble`s can be subset by calling indices (as shown previously), but also by
@@ -437,25 +373,46 @@ you've learned about sequences in R to extract the middle row!
 ``` r
 # 1.
 movieSerie_100 <- movieSerie[100, ]
+```
 
+``` error
+Error: object 'movieSerie' not found
+```
+
+``` r
 # 2.
 # Saving `n_rows` to improve readability and reduce duplication
 n_rows <- nrow(movieSerie)
-movieSerie_last <- movieSerie[n_rows, ]
+```
 
+``` error
+Error: object 'movieSerie' not found
+```
+
+``` r
+movieSerie_last <- movieSerie[n_rows, ]
+```
+
+``` error
+Error: object 'movieSerie' not found
+```
+
+``` r
 # 3.
 movieSerie_middle <- movieSerie[median(1:n_rows), ]
 ```
 
 ``` error
-Error in `movieSerie[median(1:n_rows), ]`:
-! Can't subset rows with `median(1:n_rows)`.
-✖ Can't convert from `i` <double> to <integer> due to loss of precision.
+Error: object 'movieSerie' not found
 ```
 
 ``` r
 # 4.
 movieSerie_head <- movieSerie[-(7:n_rows), ]
+```
+
+``` error
+Error: object 'movieSerie' not found
 ```
 
 
