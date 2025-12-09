@@ -32,14 +32,15 @@ xmas_movies_plotting <- read_csv("data/xmas_movies.csv", na = c("NA", "NULL"))
 ```
 
 ``` output
-Rows: 873 Columns: 14
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (9): title, rating, genre_1, genre_2, genre_3, description, director, st...
-dbl (5): runtime, imdb_rating, tmdb_rating, meta_score, votes
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+New names:
+Rows: 873 Columns: 16
+── Column specification
+──────────────────────────────────────────────────────── Delimiter: "," chr
+(9): title, rating, genre_1, genre_2, genre_3, description, director, st... dbl
+(7): ...1, runtime, imdb_rating, tmdb_rating, meta_score, release_year, ...
+ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
+Specify the column types or set `show_col_types = FALSE` to quiet this message.
+• `` -> `...1`
 ```
 
 
@@ -57,13 +58,7 @@ of the x-axis and one containing the values for the y-axis. Here we use the $-no
 plot(xmas_movies_plotting$release_year, xmas_movies_plotting$imdb_rating)
 ```
 
-``` warning
-Warning: Unknown or uninitialised column: `release_year`.
-```
-
-``` error
-Error in xy.coords(x, y, xlabel, ylabel, log): 'x' and 'y' lengths differ
-```
+<img src="fig/04-functions-plots-rendered-first-scatterplot-1.png" style="display: block; margin: auto;" />
 
 Scatterplots are useful for showing that sort for relationships in the data.
 Here it does not appear that the correlation exists; there is no clear trend.
@@ -77,13 +72,7 @@ plot(xmas_movies_plotting$release_year, xmas_movies_plotting$imdb_rating,
      ylab = "imdb rating")
 ```
 
-``` warning
-Warning: Unknown or uninitialised column: `release_year`.
-```
-
-``` error
-Error in xy.coords(x, y, xlabel, ylabel, log): 'x' and 'y' lengths differ
-```
+<img src="fig/04-functions-plots-rendered-unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
 
 
 ## Boxplots 
@@ -286,7 +275,7 @@ as.numeric(for_time)/as.numeric(vect_time)
 ```
 
 ``` output
-[1] 6.707653
+[1] 4.43011
 ```
 More than double as fast!
 To be fair most of the time is spent outputting the results, but as a general

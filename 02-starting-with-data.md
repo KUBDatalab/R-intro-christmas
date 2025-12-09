@@ -144,22 +144,22 @@ xmas_movies
 ```
 
 ``` output
-# A tibble: 873 × 14
-   title       rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
-   <chr>       <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
- 1 Love Actua… R          135         7.6         4.3         55 Comedy  Drama  
- 2 Home Alone  PG         103         7.7         8.8         63 Comedy  Family 
- 3 National L… PG-13       97         7.5         7.1         49 Comedy  <NA>   
- 4 Elf         PG          97         7.1         6           66 Advent… Comedy 
- 5 How the Gr… PG         104         6.3         2.5         46 Comedy  Family 
- 6 The Grinch  PG          85         6.4         2.5         51 Animat… Comedy 
- 7 Die Hard    R          132         8.2         1.8         72 Action  Thrill…
- 8 Home Alone… PG         120         6.9         8.1         46 Advent… Comedy 
- 9 The Polar … G          100         6.6         6           61 Animat… Advent…
-10 It's a Won… PG         130         8.6         6.9         89 Drama   Family 
+# A tibble: 873 × 16
+    ...1 title rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+   <dbl> <chr> <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
+ 1     1 Love… R          135         7.6         4.3         55 Comedy  Drama  
+ 2     2 Home… PG         103         7.7         8.8         63 Comedy  Family 
+ 3     3 Nati… PG-13       97         7.5         7.1         49 Comedy  <NA>   
+ 4     4 Elf   PG          97         7.1         6           66 Advent… Comedy 
+ 5     5 How … PG         104         6.3         2.5         46 Comedy  Family 
+ 6     6 The … PG          85         6.4         2.5         51 Animat… Comedy 
+ 7     7 Die … R          132         8.2         1.8         72 Action  Thrill…
+ 8     8 Home… PG         120         6.9         8.1         46 Advent… Comedy 
+ 9     9 The … G          100         6.6         6           61 Animat… Advent…
+10    10 It's… PG         130         8.6         6.9         89 Drama   Family 
 # ℹ 863 more rows
-# ℹ 6 more variables: genre_3 <chr>, description <chr>, director <chr>,
-#   stars <chr>, votes <dbl>, gross <chr>
+# ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
+#   director <chr>, stars <chr>, votes <dbl>, gross <chr>
 ```
 
 
@@ -241,9 +241,9 @@ xmas_movies[1, 1]
 
 ``` output
 # A tibble: 1 × 1
-  title        
-  <chr>        
-1 Love Actually
+   ...1
+  <dbl>
+1     1
 ```
 
 ``` r
@@ -253,9 +253,9 @@ xmas_movies[1, 6]
 
 ``` output
 # A tibble: 1 × 1
-  meta_score
-       <dbl>
-1         55
+  tmdb_rating
+        <dbl>
+1         4.3
 ```
 
 ``` r
@@ -264,12 +264,7 @@ xmas_movies[[1]] %>% head()
 ```
 
 ``` output
-[1] "Love Actually"                        
-[2] "Home Alone"                           
-[3] "National Lampoon's Christmas Vacation"
-[4] "Elf"                                  
-[5] "How the Grinch Stole Christmas"       
-[6] "The Grinch"                           
+[1] 1 2 3 4 5 6
 ```
 
 ``` r
@@ -279,18 +274,18 @@ xmas_movies[1]
 
 ``` output
 # A tibble: 873 × 1
-   title                                
-   <chr>                                
- 1 Love Actually                        
- 2 Home Alone                           
- 3 National Lampoon's Christmas Vacation
- 4 Elf                                  
- 5 How the Grinch Stole Christmas       
- 6 The Grinch                           
- 7 Die Hard                             
- 8 Home Alone 2: Lost in New York       
- 9 The Polar Express                    
-10 It's a Wonderful Life                
+    ...1
+   <dbl>
+ 1     1
+ 2     2
+ 3     3
+ 4     4
+ 5     5
+ 6     6
+ 7     7
+ 8     8
+ 9     9
+10    10
 # ℹ 863 more rows
 ```
 
@@ -301,11 +296,11 @@ xmas_movies[1:3, 7]
 
 ``` output
 # A tibble: 3 × 1
-  genre_1
-  <chr>  
-1 Comedy 
-2 Comedy 
-3 Comedy 
+  meta_score
+       <dbl>
+1         55
+2         63
+3         49
 ```
 
 ``` r
@@ -314,12 +309,12 @@ xmas_movies[3, ]
 ```
 
 ``` output
-# A tibble: 1 × 14
-  title        rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
-  <chr>        <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
-1 National La… PG-13       97         7.5         7.1         49 Comedy  <NA>   
-# ℹ 6 more variables: genre_3 <chr>, description <chr>, director <chr>,
-#   stars <chr>, votes <dbl>, gross <chr>
+# A tibble: 1 × 16
+   ...1 title  rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+  <dbl> <chr>  <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
+1     3 Natio… PG-13       97         7.5         7.1         49 Comedy  <NA>   
+# ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
+#   director <chr>, stars <chr>, votes <dbl>, gross <chr>
 ```
 
 ``` r
@@ -338,30 +333,7 @@ xmas_movies[, -1]          # The whole tibble, except the first column
 ```
 
 ``` output
-# A tibble: 873 × 13
-   rating runtime imdb_rating tmdb_rating meta_score genre_1   genre_2   genre_3
-   <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>     <chr>     <chr>  
- 1 R          135         7.6         4.3         55 Comedy    Drama     Romance
- 2 PG         103         7.7         8.8         63 Comedy    Family    <NA>   
- 3 PG-13       97         7.5         7.1         49 Comedy    <NA>      <NA>   
- 4 PG          97         7.1         6           66 Adventure Comedy    Family 
- 5 PG         104         6.3         2.5         46 Comedy    Family    Fantasy
- 6 PG          85         6.4         2.5         51 Animation Comedy    Family 
- 7 R          132         8.2         1.8         72 Action    Thriller  <NA>   
- 8 PG         120         6.9         8.1         46 Adventure Comedy    Crime  
- 9 G          100         6.6         6           61 Animation Adventure Comedy 
-10 PG         130         8.6         6.9         89 Drama     Family    Fantasy
-# ℹ 863 more rows
-# ℹ 5 more variables: description <chr>, director <chr>, stars <chr>,
-#   votes <dbl>, gross <chr>
-```
-
-``` r
-xmas_movies[-c(7:131), ]   # Equivalent to head(interviews)
-```
-
-``` output
-# A tibble: 748 × 14
+# A tibble: 873 × 15
    title       rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
    <chr>       <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
  1 Love Actua… R          135         7.6         4.3         55 Comedy  Drama  
@@ -370,13 +342,36 @@ xmas_movies[-c(7:131), ]   # Equivalent to head(interviews)
  4 Elf         PG          97         7.1         6           66 Advent… Comedy 
  5 How the Gr… PG         104         6.3         2.5         46 Comedy  Family 
  6 The Grinch  PG          85         6.4         2.5         51 Animat… Comedy 
- 7 The Christ… <NA>        86         5           3.1         NA Comedy  Romance
- 8 The Apartm… Appro…     125         8.3         2.2         94 Comedy  Drama  
- 9 A Season f… TV-G        90         7           4           NA Romance <NA>   
-10 A Princess… TV-G        91         6.3         8.7         NA Comedy  Drama  
+ 7 Die Hard    R          132         8.2         1.8         72 Action  Thrill…
+ 8 Home Alone… PG         120         6.9         8.1         46 Advent… Comedy 
+ 9 The Polar … G          100         6.6         6           61 Animat… Advent…
+10 It's a Won… PG         130         8.6         6.9         89 Drama   Family 
+# ℹ 863 more rows
+# ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
+#   director <chr>, stars <chr>, votes <dbl>, gross <chr>
+```
+
+``` r
+xmas_movies[-c(7:131), ]   # Equivalent to head(interviews)
+```
+
+``` output
+# A tibble: 748 × 16
+    ...1 title rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+   <dbl> <chr> <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
+ 1     1 Love… R          135         7.6         4.3         55 Comedy  Drama  
+ 2     2 Home… PG         103         7.7         8.8         63 Comedy  Family 
+ 3     3 Nati… PG-13       97         7.5         7.1         49 Comedy  <NA>   
+ 4     4 Elf   PG          97         7.1         6           66 Advent… Comedy 
+ 5     5 How … PG         104         6.3         2.5         46 Comedy  Family 
+ 6     6 The … PG          85         6.4         2.5         51 Animat… Comedy 
+ 7   132 The … <NA>        86         5           3.1         NA Comedy  Romance
+ 8   133 The … Appro…     125         8.3         2.2         94 Comedy  Drama  
+ 9   134 A Se… TV-G        90         7           4           NA Romance <NA>   
+10   135 A Pr… TV-G        91         6.3         8.7         NA Comedy  Drama  
 # ℹ 738 more rows
-# ℹ 6 more variables: genre_3 <chr>, description <chr>, director <chr>,
-#   stars <chr>, votes <dbl>, gross <chr>
+# ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
+#   director <chr>, stars <chr>, votes <dbl>, gross <chr>
 ```
 
 `tibble`s can be subset by calling indices (as shown previously), but also by

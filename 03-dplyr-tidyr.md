@@ -145,7 +145,7 @@ select(xmas_movies, title:description)
 ```
 
 ``` output
-# A tibble: 873 × 10
+# A tibble: 873 × 11
    title       rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
    <chr>       <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
  1 Love Actua… R          135         7.6         4.3         55 Comedy  Drama  
@@ -159,7 +159,7 @@ select(xmas_movies, title:description)
  9 The Polar … G          100         6.6         6           61 Animat… Advent…
 10 It's a Won… PG         130         8.6         6.9         89 Drama   Family 
 # ℹ 863 more rows
-# ℹ 2 more variables: genre_3 <chr>, description <chr>
+# ℹ 3 more variables: genre_3 <chr>, release_year <dbl>, description <chr>
 ```
 
 To choose rows based on specific criteria, we can use the `filter()` function.
@@ -173,22 +173,22 @@ filter(xmas_movies, rating == "PG-13")
 ```
 
 ``` output
-# A tibble: 24 × 14
-   title       rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
-   <chr>       <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
- 1 National L… PG-13       97         7.5         7.1         49 Comedy  <NA>   
- 2 Scrooged    PG-13      101         6.9         7.9         38 Comedy  Drama  
- 3 Spirited    PG-13      127         6.6         3           55 Comedy  Family 
- 4 Last Chris… PG-13      103         6.5         4.7         50 Comedy  Drama  
- 5 Four Chris… PG-13       88         5.7         3.6         41 Comedy  Drama  
- 6 Happiest S… PG-13      102         6.6         6           69 Comedy  Romance
- 7 Shazam!     PG-13      132         7           3.4         71 Action  Advent…
- 8 Surviving … PG-13       91         5.4         3.5         19 Comedy  Romance
- 9 Batman Ret… PG-13      126         7.1         7.4         68 Action  Crime  
-10 Edward Sci… PG-13      105         7.9         2.9         74 Drama   Fantasy
+# A tibble: 24 × 16
+    ...1 title rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+   <dbl> <chr> <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
+ 1     3 Nati… PG-13       97         7.5         7.1         49 Comedy  <NA>   
+ 2    13 Scro… PG-13      101         6.9         7.9         38 Comedy  Drama  
+ 3    14 Spir… PG-13      127         6.6         3           55 Comedy  Family 
+ 4    19 Last… PG-13      103         6.5         4.7         50 Comedy  Drama  
+ 5    23 Four… PG-13       88         5.7         3.6         41 Comedy  Drama  
+ 6    55 Happ… PG-13      102         6.6         6           69 Comedy  Romance
+ 7    62 Shaz… PG-13      132         7           3.4         71 Action  Advent…
+ 8    65 Surv… PG-13       91         5.4         3.5         19 Comedy  Romance
+ 9    71 Batm… PG-13      126         7.1         7.4         68 Action  Crime  
+10    72 Edwa… PG-13      105         7.9         2.9         74 Drama   Fantasy
 # ℹ 14 more rows
-# ℹ 6 more variables: genre_3 <chr>, description <chr>, director <chr>,
-#   stars <chr>, votes <dbl>, gross <chr>
+# ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
+#   director <chr>, stars <chr>, votes <dbl>, gross <chr>
 ```
 
 We can also specify multiple conditions within the `filter()` function. We can
@@ -208,12 +208,12 @@ filter(xmas_movies, rating == "PG-13",
 ```
 
 ``` output
-# A tibble: 1 × 14
-  title        rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
-  <chr>        <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
-1 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama  
-# ℹ 6 more variables: genre_3 <chr>, description <chr>, director <chr>,
-#   stars <chr>, votes <dbl>, gross <chr>
+# A tibble: 1 × 16
+   ...1 title  rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+  <dbl> <chr>  <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
+1   116 A Cal… PG-13      106         5.8         8.2         NA Comedy  Drama  
+# ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
+#   director <chr>, stars <chr>, votes <dbl>, gross <chr>
 ```
 
 We can also form "and" statements with the `&` operator instead of commas:
@@ -228,12 +228,12 @@ filter(xmas_movies, rating == "PG-13" &
 ```
 
 ``` output
-# A tibble: 1 × 14
-  title        rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
-  <chr>        <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
-1 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama  
-# ℹ 6 more variables: genre_3 <chr>, description <chr>, director <chr>,
-#   stars <chr>, votes <dbl>, gross <chr>
+# A tibble: 1 × 16
+   ...1 title  rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+  <dbl> <chr>  <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
+1   116 A Cal… PG-13      106         5.8         8.2         NA Comedy  Drama  
+# ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
+#   director <chr>, stars <chr>, votes <dbl>, gross <chr>
 ```
 
 In an "or" statement, observations must meet *at least one* of the specified conditions. 
@@ -249,22 +249,22 @@ filter(xmas_movies, rating == "PG-13" |
 ```
 
 ``` output
-# A tibble: 398 × 14
-   title       rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
-   <chr>       <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
- 1 Love Actua… R          135         7.6         4.3         55 Comedy  Drama  
- 2 Home Alone  PG         103         7.7         8.8         63 Comedy  Family 
- 3 National L… PG-13       97         7.5         7.1         49 Comedy  <NA>   
- 4 How the Gr… PG         104         6.3         2.5         46 Comedy  Family 
- 5 Die Hard    R          132         8.2         1.8         72 Action  Thrill…
- 6 Home Alone… PG         120         6.9         8.1         46 Advent… Comedy 
- 7 It's a Won… PG         130         8.6         6.9         89 Drama   Family 
- 8 White Chri… <NA>       120         7.6         9           56 Comedy  Musical
- 9 Scrooged    PG-13      101         6.9         7.9         38 Comedy  Drama  
-10 Spirited    PG-13      127         6.6         3           55 Comedy  Family 
+# A tibble: 398 × 16
+    ...1 title rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+   <dbl> <chr> <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
+ 1     1 Love… R          135         7.6         4.3         55 Comedy  Drama  
+ 2     2 Home… PG         103         7.7         8.8         63 Comedy  Family 
+ 3     3 Nati… PG-13       97         7.5         7.1         49 Comedy  <NA>   
+ 4     5 How … PG         104         6.3         2.5         46 Comedy  Family 
+ 5     7 Die … R          132         8.2         1.8         72 Action  Thrill…
+ 6     8 Home… PG         120         6.9         8.1         46 Advent… Comedy 
+ 7    10 It's… PG         130         8.6         6.9         89 Drama   Family 
+ 8    12 Whit… <NA>       120         7.6         9           56 Comedy  Musical
+ 9    13 Scro… PG-13      101         6.9         7.9         38 Comedy  Drama  
+10    14 Spir… PG-13      127         6.6         3           55 Comedy  Family 
 # ℹ 388 more rows
-# ℹ 6 more variables: genre_3 <chr>, description <chr>, director <chr>,
-#   stars <chr>, votes <dbl>, gross <chr>
+# ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
+#   director <chr>, stars <chr>, votes <dbl>, gross <chr>
 ```
 
 
@@ -399,11 +399,21 @@ xmas_movies %>%
      select(title, runtime, rating)
 ```
 
-``` error
-Error in `filter()` at dplyr/R/select.R:54:3:
-ℹ In argument: `release_year > 1980`.
-Caused by error:
-! object 'release_year' not found
+``` output
+# A tibble: 786 × 3
+   title                                 runtime rating
+   <chr>                                   <dbl> <chr> 
+ 1 Love Actually                             135 R     
+ 2 Home Alone                                103 PG    
+ 3 National Lampoon's Christmas Vacation      97 PG-13 
+ 4 Elf                                        97 PG    
+ 5 How the Grinch Stole Christmas            104 PG    
+ 6 The Grinch                                 85 PG    
+ 7 Die Hard                                  132 R     
+ 8 Home Alone 2: Lost in New York            120 PG    
+ 9 The Polar Express                         100 G     
+10 The Santa Clause                           97 PG    
+# ℹ 776 more rows
 ```
 
 ::::
@@ -611,10 +621,21 @@ xmas_movies %>%
     count(release_year)
 ```
 
-``` error
-Error in `count()` at magrittr/R/pipe.R:136:3:
-! Must group by variables found in `.data`.
-✖ Column `release_year` is not found.
+``` output
+# A tibble: 83 × 2
+   release_year     n
+          <dbl> <int>
+ 1         1898     1
+ 2         1925     2
+ 3         1928     1
+ 4         1931     1
+ 5         1934     2
+ 6         1935     1
+ 7         1936     2
+ 8         1937     1
+ 9         1938     3
+10         1939     3
+# ℹ 73 more rows
 ```
 
 For convenience, `count()` provides the `sort` argument to get results in
@@ -626,10 +647,21 @@ xmas_movies %>%
     count(release_year, sort = TRUE)
 ```
 
-``` error
-Error in `count()` at magrittr/R/pipe.R:136:3:
-! Must group by variables found in `.data`.
-✖ Column `release_year` is not found.
+``` output
+# A tibble: 83 × 2
+   release_year     n
+          <dbl> <int>
+ 1         2020    88
+ 2         2022    77
+ 3         2019    73
+ 4         2021    72
+ 5         2018    69
+ 6         2017    49
+ 7         2023    45
+ 8         2016    40
+ 9         2015    37
+10         2014    31
+# ℹ 73 more rows
 ```
 
 
