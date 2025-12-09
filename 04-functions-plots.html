@@ -376,47 +376,53 @@ Here we use the $-notation:</p>
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">plot</span><span class="op">(</span><span class="va">movieSerie_plotting</span><span class="op">$</span><span class="va">release_year</span>, <span class="va">movieSerie_plotting</span><span class="op">$</span><span class="va">imdb_score</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="fu">plot</span><span class="op">(</span><span class="va">xmas_movies_plotting</span><span class="op">$</span><span class="va">release_year</span>, <span class="va">xmas_movies_plotting</span><span class="op">$</span><span class="va">imdb_rating</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="warning" tabindex="0"><code>Warning: Unknown or uninitialised column: `release_year`.</code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error: object 'movieSerie_plotting' not found</code></pre>
+<pre class="error" tabindex="0"><code>Error in xy.coords(x, y, xlabel, ylabel, log): 'x' and 'y' lengths differ</code></pre>
 </div>
 <p>Scatterplots are useful for showing that sort for relationships in
 the data. Here it does not appear that the correlation exists; there is
 no clear trend.</p>
 <p>We might want to adjust the labels on the axes, and add a main
 title:</p>
-<div class="codewrapper sourceCode" id="cb5">
+<div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">plot</span><span class="op">(</span><span class="va">movieSerie_plotting</span><span class="op">$</span><span class="va">release_year</span>, <span class="va">movieSerie_plotting</span><span class="op">$</span><span class="va">imdb_score</span>, </span>
-<span>     main <span class="op">=</span> <span class="st">"Relation between release date and their imdb_score"</span>,</span>
+<code class="sourceCode R"><span><span class="fu">plot</span><span class="op">(</span><span class="va">xmas_movies_plotting</span><span class="op">$</span><span class="va">release_year</span>, <span class="va">xmas_movies_plotting</span><span class="op">$</span><span class="va">imdb_rating</span>, </span>
+<span>     main <span class="op">=</span> <span class="st">"Relation between release date and their imdb_rating"</span>,</span>
 <span>     xlab <span class="op">=</span> <span class="st">"Release year"</span>,</span>
-<span>     ylab <span class="op">=</span> <span class="st">"imdb score"</span><span class="op">)</span></span></code></pre>
+<span>     ylab <span class="op">=</span> <span class="st">"imdb rating"</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">WARNING<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="warning" tabindex="0"><code>Warning: Unknown or uninitialised column: `release_year`.</code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="error" tabindex="0"><code>Error: object 'movieSerie_plotting' not found</code></pre>
+<pre class="error" tabindex="0"><code>Error in xy.coords(x, y, xlabel, ylabel, log): 'x' and 'y' lengths differ</code></pre>
 </div>
 </section><section><h2 class="section-heading" id="boxplots">Boxplots<a class="anchor" aria-label="anchor" href="#boxplots"></a></h2>
 <hr class="half-width"><p>We can use boxplots to visualize the distribution of number of
 imdb_score for genre:</p>
-<div class="codewrapper sourceCode" id="cb7">
+<div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">boxplot</span><span class="op">(</span><span class="va">movieSerie_plotting</span><span class="op">$</span><span class="va">imdb_score</span><span class="op">~</span><span class="va">movieSerie_plotting</span><span class="op">$</span><span class="va">genre</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="fu">boxplot</span><span class="op">(</span><span class="va">xmas_movies_plotting</span><span class="op">$</span><span class="va">imdb_rating</span><span class="op">~</span><span class="va">xmas_movies_plotting</span><span class="op">$</span><span class="va">genre_1</span><span class="op">)</span></span></code></pre>
 </div>
-<div class="codewrapper">
-<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="error" tabindex="0"><code>Error in eval(predvars, data, env): object 'movieSerie_plotting' not found</code></pre>
-</div>
-<p>Two new things happens here. First, we are using a new way of telling
+<p><img src="fig/04-functions-plots-rendered-unnamed-chunk-2-1.png" style="display: block; margin: auto;" class="figure">
+Two new things happens here. First, we are using a new way of telling
 the plot function what relationship we want to visualise. The function
 notation y~x, tells the boxplot function that we want to visualise y as
 a function of x. In this case we want to visualise the number of people,
@@ -435,18 +441,13 @@ do, outliers are either very interesting, or something that we can
 ignore.</p>
 </section><section><h2 class="section-heading" id="histograms">Histograms<a class="anchor" aria-label="anchor" href="#histograms"></a></h2>
 <hr class="half-width"><p>Another useful plottype are histograms.</p>
-<div class="codewrapper sourceCode" id="cb9">
+<div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">hist</span><span class="op">(</span><span class="va">movieSerie_plotting</span><span class="op">$</span><span class="va">runtime</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="fu">hist</span><span class="op">(</span><span class="va">xmas_movies_plotting</span><span class="op">$</span><span class="va">runtime</span><span class="op">)</span></span></code></pre>
 </div>
-<div class="codewrapper">
-<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="error" tabindex="0"><code>Error: object 'movieSerie_plotting' not found</code></pre>
-</div>
-<p>Histograms counts the number of observations in our data, that lies
+<figure><img src="fig/04-functions-plots-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" class="figure mx-auto d-block"></figure><p>Histograms counts the number of observations in our data, that lies
 between two values. Here the “breaks” between the values on the x-axis
 corresponds nicely to the number of people, but they do not have to.</p>
 </section><section><h2 class="section-heading" id="writing-our-own-functions">Writing our own functions<a class="anchor" aria-label="anchor" href="#writing-our-own-functions"></a></h2>
@@ -604,7 +605,7 @@ solution is.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1] 6.540154</code></pre>
+<pre class="output" tabindex="0"><code>[1] 6.707653</code></pre>
 </div>
 <p>More than double as fast! To be fair most of the time is spent
 outputting the results, but as a general rule utilizing the vectorized
