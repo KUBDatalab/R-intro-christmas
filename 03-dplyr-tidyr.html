@@ -233,10 +233,10 @@
 
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
-        <ul><li><a href="#what-is-an-r-package">What is an R package?</a></li>
+        <ul><li><a href="#what-is-an-r-package">What is an R package 🎁?</a></li>
 <li><a href="#learning-dplyr-and-tidyr">Learning <strong><code>dplyr</code></strong> and
 <strong><code>tidyr</code></strong></a></li>
-<li><a href="#selecting-columns-and-filtering-rows">Selecting columns and filtering rows</a></li>
+<li><a href="#selecting-columns-and-filtering-rows">Selecting columns and filtering rows ✨</a></li>
 <li><a href="#pipes">Pipes</a></li>
 <li><a href="#mutate">Mutate</a></li>
 <li><a href="#split-apply-combine-data-analysis-and-the-summarize-function">Split-apply-combine data analysis and the summarize() function</a></li>
@@ -400,7 +400,7 @@ plotting and analysis.</p>
 <p>Similarly to <strong><code>readr</code></strong>,
 <strong><code>dplyr</code></strong> and
 <strong><code>tidyr</code></strong> are also part of the tidyverse.
-These packages were loaded in R’s memory when we called
+These packages 🎁 were loaded in R’s memory when we called
 <code><a href="https://tidyverse.tidyverse.org" class="external-link">library(tidyverse)</a></code> earlier.</p>
 <div id="note" class="callout">
 <div class="callout-square">
@@ -421,7 +421,7 @@ teaching.</p>
 </div>
 </div>
 </div>
-<section><h2 class="section-heading" id="what-is-an-r-package">What is an R package?<a class="anchor" aria-label="anchor" href="#what-is-an-r-package"></a></h2>
+<section><h2 class="section-heading" id="what-is-an-r-package">What is an R package 🎁?<a class="anchor" aria-label="anchor" href="#what-is-an-r-package"></a></h2>
 <hr class="half-width"><p>The package <strong><code>dplyr</code></strong> provides easy tools
 for the most common data wrangling tasks. It is built to work directly
 with dataframes, with many common tasks optimized by being written in a
@@ -473,10 +473,10 @@ statistics on grouped data</li>
 <code>arrange()</code>: sort results</li>
 <li>
 <code>count()</code>: count discrete values</li>
-</ul></section><section><h2 class="section-heading" id="selecting-columns-and-filtering-rows">Selecting columns and filtering rows<a class="anchor" aria-label="anchor" href="#selecting-columns-and-filtering-rows"></a></h2>
+</ul></section><section><h2 class="section-heading" id="selecting-columns-and-filtering-rows">Selecting columns and filtering rows ✨<a class="anchor" aria-label="anchor" href="#selecting-columns-and-filtering-rows"></a></h2>
 <hr class="half-width"><p>To select columns of a dataframe, use <code>select()</code>. The
 first argument to this function is the dataframe
-(<code>movieSerie</code>), and the subsequent arguments are the columns
+(<code>xmas_movies</code>), and the subsequent arguments are the columns
 to keep, separated by commas. Alternatively, if you are selecting
 columns adjacent to each other, you can use a <code>:</code> to select a
 range of columns, read as “select columns from ___ to ___.”</p>
@@ -485,81 +485,82 @@ range of columns, read as “select columns from ___ to ___.”</p>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># to select columns throughout the dataframe</span></span>
-<span><span class="fu">select</span><span class="op">(</span><span class="va">movieSerie</span>, <span class="va">title</span>, <span class="va">description</span><span class="op">)</span></span></code></pre>
+<span><span class="fu">select</span><span class="op">(</span><span class="va">xmas_movies</span>, <span class="va">title</span>, <span class="va">description</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 5,850 × 2
-   title                               description
-   &lt;chr&gt;                               &lt;chr&gt;
- 1 Five Came Back: The Reference Films "This collection includes 12 World War I…
- 2 Taxi Driver                         "A mentally unstable Vietnam War veteran…
- 3 Deliverance                         "Intent on seeing the Cahulawassee River…
- 4 Monty Python and the Holy Grail     "King Arthur, accompanied by his squire,…
- 5 The Dirty Dozen                     "12 American military prisoners in World…
- 6 Monty Python's Flying Circus        "A British sketch comedy series with the…
- 7 Life of Brian                       "Brian Cohen is an average young Jewish …
- 8 Dirty Harry                         "When a madman dubbed 'Scorpio' terroriz…
- 9 Bonnie and Clyde                    "In the 1930s, bored waitress Bonnie Par…
-10 The Blue Lagoon                     "Two small children and a ship's cook su…
-# ℹ 5,840 more rows</code></pre>
+<pre class="output" tabindex="0"><code># A tibble: 873 × 2
+   title                                 description
+   &lt;chr&gt;                                 &lt;chr&gt;
+ 1 Love Actually                         Follows the lives of eight very differ…
+ 2 Home Alone                            An eight-year-old troublemaker, mistak…
+ 3 National Lampoon's Christmas Vacation The Griswold family's plans for a big …
+ 4 Elf                                   Raised as an oversized elf, Buddy trav…
+ 5 How the Grinch Stole Christmas        On the outskirts of Whoville lives a g…
+ 6 The Grinch                            A grumpy Grinch plots to ruin Christma…
+ 7 Die Hard                              A New York City police officer tries t…
+ 8 Home Alone 2: Lost in New York        One year after Kevin McCallister was l…
+ 9 The Polar Express                     On Christmas Eve, a young boy embarks …
+10 It's a Wonderful Life                 An angel is sent from Heaven to help a…
+# ℹ 863 more rows</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># to select a series of connected columns</span></span>
-<span><span class="fu">select</span><span class="op">(</span><span class="va">movieSerie</span>, <span class="va">title</span><span class="op">:</span><span class="va">description</span><span class="op">)</span></span></code></pre>
+<span><span class="fu">select</span><span class="op">(</span><span class="va">xmas_movies</span>, <span class="va">title</span><span class="op">:</span><span class="va">description</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 5,850 × 4
-   title                               type  genre         description
-   &lt;chr&gt;                               &lt;chr&gt; &lt;chr&gt;         &lt;chr&gt;
- 1 Five Came Back: The Reference Films SHOW  documentation "This collection inc…
- 2 Taxi Driver                         MOVIE drama         "A mentally unstable…
- 3 Deliverance                         MOVIE drama         "Intent on seeing th…
- 4 Monty Python and the Holy Grail     MOVIE fantasy       "King Arthur, accomp…
- 5 The Dirty Dozen                     MOVIE war           "12 American militar…
- 6 Monty Python's Flying Circus        SHOW  comedy        "A British sketch co…
- 7 Life of Brian                       MOVIE comedy        "Brian Cohen is an a…
- 8 Dirty Harry                         MOVIE thriller      "When a madman dubbe…
- 9 Bonnie and Clyde                    MOVIE crime         "In the 1930s, bored…
-10 The Blue Lagoon                     MOVIE romance       "Two small children …
-# ℹ 5,840 more rows</code></pre>
+<pre class="output" tabindex="0"><code># A tibble: 873 × 10
+   title       rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+   &lt;chr&gt;       &lt;chr&gt;    &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;
+ 1 Love Actua… R          135         7.6         4.3         55 Comedy  Drama
+ 2 Home Alone  PG         103         7.7         8.8         63 Comedy  Family
+ 3 National L… PG-13       97         7.5         7.1         49 Comedy  &lt;NA&gt;
+ 4 Elf         PG          97         7.1         6           66 Advent… Comedy
+ 5 How the Gr… PG         104         6.3         2.5         46 Comedy  Family
+ 6 The Grinch  PG          85         6.4         2.5         51 Animat… Comedy
+ 7 Die Hard    R          132         8.2         1.8         72 Action  Thrill…
+ 8 Home Alone… PG         120         6.9         8.1         46 Advent… Comedy
+ 9 The Polar … G          100         6.6         6           61 Animat… Advent…
+10 It's a Won… PG         130         8.6         6.9         89 Drama   Family
+# ℹ 863 more rows
+# ℹ 2 more variables: genre_3 &lt;chr&gt;, description &lt;chr&gt;</code></pre>
 </div>
 <p>To choose rows based on specific criteria, we can use the
 <code>filter()</code> function. The argument after the dataframe is the
-condition we want our final dataframe to adhere to
-(e.g. age_certification is PG-13):</p>
+condition we want our final dataframe to adhere to (e.g. rating is
+PG-13):</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># filters observations where age_certification name is "PG-13" </span></span>
-<span><span class="fu">filter</span><span class="op">(</span><span class="va">movieSerie</span>, <span class="va">age_certification</span> <span class="op">==</span> <span class="st">"PG-13"</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="co"># filters observations where rating name is "PG-13" </span></span>
+<span><span class="fu">filter</span><span class="op">(</span><span class="va">xmas_movies</span>, <span class="va">rating</span> <span class="op">==</span> <span class="st">"PG-13"</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 451 × 14
-   id       title type  genre description release_year age_certification runtime
-   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt;
- 1 tm67378  The … MOVIE west… "An arroga…         1966 PG-13                 117
- 2 tm145608 Awak… MOVIE drama "Dr. Malco…         1990 PG-13                 120
- 3 tm147710 Nati… MOVIE come… "It's Chri…         1989 PG-13                  97
- 4 tm142895 Lean… MOVIE drama "When prin…         1989 PG-13                 105
- 5 tm107744 Miss… MOVIE thri… "When Etha…         1996 PG-13                 110
- 6 tm122434 Forr… MOVIE drama "A man wit…         1994 PG-13                 142
- 7 tm191110 Tita… MOVIE drama "101-year-…         1997 PG-13                 194
- 8 tm27395  Miss… MOVIE thri… "With comp…         2000 PG-13                 123
- 9 tm113513 Dumb… MOVIE come… "Lloyd and…         1994 PG-13                 107
-10 tm192405 Gatt… MOVIE scifi "In a futu…         1997 PG-13                 106
-# ℹ 441 more rows
-# ℹ 6 more variables: seasons &lt;dbl&gt;, imdb_id &lt;chr&gt;, imdb_score &lt;dbl&gt;,
-#   imdb_votes &lt;dbl&gt;, tmdb_popularity &lt;dbl&gt;, tmdb_score &lt;dbl&gt;</code></pre>
+<pre class="output" tabindex="0"><code># A tibble: 24 × 14
+   title       rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+   &lt;chr&gt;       &lt;chr&gt;    &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;
+ 1 National L… PG-13       97         7.5         7.1         49 Comedy  &lt;NA&gt;
+ 2 Scrooged    PG-13      101         6.9         7.9         38 Comedy  Drama
+ 3 Spirited    PG-13      127         6.6         3           55 Comedy  Family
+ 4 Last Chris… PG-13      103         6.5         4.7         50 Comedy  Drama
+ 5 Four Chris… PG-13       88         5.7         3.6         41 Comedy  Drama
+ 6 Happiest S… PG-13      102         6.6         6           69 Comedy  Romance
+ 7 Shazam!     PG-13      132         7           3.4         71 Action  Advent…
+ 8 Surviving … PG-13       91         5.4         3.5         19 Comedy  Romance
+ 9 Batman Ret… PG-13      126         7.1         7.4         68 Action  Crime
+10 Edward Sci… PG-13      105         7.9         2.9         74 Drama   Fantasy
+# ℹ 14 more rows
+# ℹ 6 more variables: genre_3 &lt;chr&gt;, description &lt;chr&gt;, director &lt;chr&gt;,
+#   stars &lt;chr&gt;, votes &lt;dbl&gt;, gross &lt;chr&gt;</code></pre>
 </div>
 <p>We can also specify multiple conditions within the
 <code>filter()</code> function. We can combine conditions using either
@@ -574,29 +575,19 @@ function, separated by commas:</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># filters observations with "and" operator (comma)</span></span>
 <span><span class="co"># output dataframe satisfies ALL specified conditions</span></span>
-<span><span class="fu">filter</span><span class="op">(</span><span class="va">movieSerie</span>, <span class="va">age_certification</span> <span class="op">==</span> <span class="st">"PG-13"</span>,</span>
+<span><span class="fu">filter</span><span class="op">(</span><span class="va">xmas_movies</span>, <span class="va">rating</span> <span class="op">==</span> <span class="st">"PG-13"</span>,</span>
 <span>                   <span class="va">runtime</span> <span class="op">&gt;</span> <span class="fl">100</span>,</span>
-<span>                   <span class="va">imdb_score</span> <span class="op">&lt;</span> <span class="fl">6.0</span><span class="op">)</span></span></code></pre>
+<span>                   <span class="va">imdb_rating</span> <span class="op">&lt;</span> <span class="fl">6.0</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 60 × 14
-   id       title type  genre description release_year age_certification runtime
-   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt;
- 1 tm12499  The … MOVIE thri… "Angela Be…         1995 PG-13                 114
- 2 tm93055  Grow… MOVIE come… "After the…         2010 PG-13                 102
- 3 tm159901 Miss… MOVIE acti… "After her…         2005 PG-13                 115
- 4 tm88045  How … MOVIE come… "After bei…         2010 PG-13                 121
- 5 tm700    10,0… MOVIE acti… "A prehist…         2008 PG-13                 109
- 6 tm39487  Catc… MOVIE drama "Gray Whee…         2006 PG-13                 111
- 7 tm130574 Did … MOVIE come… "In New Yo…         2009 PG-13                 103
- 8 tm148041 What… MOVIE come… "What's Yo…         2009 PG-13                 192
- 9 tm237621 The … MOVIE horr… "Two buddi…         2009 PG-13                 122
-10 tm59289  Rowd… MOVIE acti… "A small-t…         2012 PG-13                 143
-# ℹ 50 more rows
-# ℹ 6 more variables: seasons &lt;dbl&gt;, imdb_id &lt;chr&gt;, imdb_score &lt;dbl&gt;,
-#   imdb_votes &lt;dbl&gt;, tmdb_popularity &lt;dbl&gt;, tmdb_score &lt;dbl&gt;</code></pre>
+<pre class="output" tabindex="0"><code># A tibble: 1 × 14
+  title        rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+  &lt;chr&gt;        &lt;chr&gt;    &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;
+1 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama
+# ℹ 6 more variables: genre_3 &lt;chr&gt;, description &lt;chr&gt;, director &lt;chr&gt;,
+#   stars &lt;chr&gt;, votes &lt;dbl&gt;, gross &lt;chr&gt;</code></pre>
 </div>
 <p>We can also form “and” statements with the <code>&amp;</code>
 operator instead of commas:</p>
@@ -606,29 +597,19 @@ operator instead of commas:</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># filters observations with "&amp;" logical operator</span></span>
 <span><span class="co"># output dataframe satisfies ALL specified conditions</span></span>
-<span><span class="fu">filter</span><span class="op">(</span><span class="va">movieSerie</span>, <span class="va">age_certification</span> <span class="op">==</span> <span class="st">"PG-13"</span> <span class="op">&amp;</span> </span>
+<span><span class="fu">filter</span><span class="op">(</span><span class="va">xmas_movies</span>, <span class="va">rating</span> <span class="op">==</span> <span class="st">"PG-13"</span> <span class="op">&amp;</span> </span>
 <span>                   <span class="va">runtime</span> <span class="op">&gt;</span> <span class="fl">100</span> <span class="op">&amp;</span> </span>
-<span>                   <span class="va">imdb_score</span> <span class="op">&lt;</span> <span class="fl">6.0</span><span class="op">)</span></span></code></pre>
+<span>                   <span class="va">imdb_rating</span> <span class="op">&lt;</span> <span class="fl">6.0</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 60 × 14
-   id       title type  genre description release_year age_certification runtime
-   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt;
- 1 tm12499  The … MOVIE thri… "Angela Be…         1995 PG-13                 114
- 2 tm93055  Grow… MOVIE come… "After the…         2010 PG-13                 102
- 3 tm159901 Miss… MOVIE acti… "After her…         2005 PG-13                 115
- 4 tm88045  How … MOVIE come… "After bei…         2010 PG-13                 121
- 5 tm700    10,0… MOVIE acti… "A prehist…         2008 PG-13                 109
- 6 tm39487  Catc… MOVIE drama "Gray Whee…         2006 PG-13                 111
- 7 tm130574 Did … MOVIE come… "In New Yo…         2009 PG-13                 103
- 8 tm148041 What… MOVIE come… "What's Yo…         2009 PG-13                 192
- 9 tm237621 The … MOVIE horr… "Two buddi…         2009 PG-13                 122
-10 tm59289  Rowd… MOVIE acti… "A small-t…         2012 PG-13                 143
-# ℹ 50 more rows
-# ℹ 6 more variables: seasons &lt;dbl&gt;, imdb_id &lt;chr&gt;, imdb_score &lt;dbl&gt;,
-#   imdb_votes &lt;dbl&gt;, tmdb_popularity &lt;dbl&gt;, tmdb_score &lt;dbl&gt;</code></pre>
+<pre class="output" tabindex="0"><code># A tibble: 1 × 14
+  title        rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+  &lt;chr&gt;        &lt;chr&gt;    &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;
+1 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama
+# ℹ 6 more variables: genre_3 &lt;chr&gt;, description &lt;chr&gt;, director &lt;chr&gt;,
+#   stars &lt;chr&gt;, votes &lt;dbl&gt;, gross &lt;chr&gt;</code></pre>
 </div>
 <p>In an “or” statement, observations must meet <em>at least one</em> of
 the specified conditions. To form “or” statements we use the logical
@@ -639,29 +620,29 @@ operator for “or,” which is the vertical bar (|):</p>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># filters observations with "|" logical operator</span></span>
 <span><span class="co"># output dataframe satisfies AT LEAST ONE of the specified conditions</span></span>
-<span><span class="fu">filter</span><span class="op">(</span><span class="va">movieSerie</span>, <span class="va">age_certification</span> <span class="op">==</span> <span class="st">"PG-13"</span> <span class="op">|</span> </span>
+<span><span class="fu">filter</span><span class="op">(</span><span class="va">xmas_movies</span>, <span class="va">rating</span> <span class="op">==</span> <span class="st">"PG-13"</span> <span class="op">|</span> </span>
 <span>                   <span class="va">runtime</span> <span class="op">&gt;</span> <span class="fl">100</span> <span class="op">|</span> </span>
-<span>                   <span class="va">imdb_score</span> <span class="op">&lt;</span> <span class="fl">6.0</span><span class="op">)</span></span></code></pre>
+<span>                   <span class="va">imdb_rating</span> <span class="op">&lt;</span> <span class="fl">6.0</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 2,852 × 14
-   id       title type  genre description release_year age_certification runtime
-   &lt;chr&gt;    &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;               &lt;dbl&gt;
- 1 tm84618  Taxi… MOVIE drama A mentally…         1976 "R"                   114
- 2 tm154986 Deli… MOVIE drama Intent on …         1972 "R"                   109
- 3 tm120801 The … MOVIE war   12 America…         1967 ""                    150
- 4 tm14873  Dirt… MOVIE thri… When a mad…         1971 "R"                   102
- 5 tm119281 Bonn… MOVIE crime In the 193…         1967 "R"                   110
- 6 tm98978  The … MOVIE roma… Two small …         1980 "R"                   104
- 7 tm44204  The … MOVIE acti… A team of …         1961 ""                    158
- 8 tm67378  The … MOVIE west… An arrogan…         1966 "PG-13"               117
- 9 tm16479  Whit… MOVIE roma… Two talent…         1954 ""                    115
-10 tm89386  Hitl… MOVIE hist… A keen chr…         1977 "PG"                  150
-# ℹ 2,842 more rows
-# ℹ 6 more variables: seasons &lt;dbl&gt;, imdb_id &lt;chr&gt;, imdb_score &lt;dbl&gt;,
-#   imdb_votes &lt;dbl&gt;, tmdb_popularity &lt;dbl&gt;, tmdb_score &lt;dbl&gt;</code></pre>
+<pre class="output" tabindex="0"><code># A tibble: 398 × 14
+   title       rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+   &lt;chr&gt;       &lt;chr&gt;    &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;
+ 1 Love Actua… R          135         7.6         4.3         55 Comedy  Drama
+ 2 Home Alone  PG         103         7.7         8.8         63 Comedy  Family
+ 3 National L… PG-13       97         7.5         7.1         49 Comedy  &lt;NA&gt;
+ 4 How the Gr… PG         104         6.3         2.5         46 Comedy  Family
+ 5 Die Hard    R          132         8.2         1.8         72 Action  Thrill…
+ 6 Home Alone… PG         120         6.9         8.1         46 Advent… Comedy
+ 7 It's a Won… PG         130         8.6         6.9         89 Drama   Family
+ 8 White Chri… &lt;NA&gt;       120         7.6         9           56 Comedy  Musical
+ 9 Scrooged    PG-13      101         6.9         7.9         38 Comedy  Drama
+10 Spirited    PG-13      127         6.6         3           55 Comedy  Family
+# ℹ 388 more rows
+# ℹ 6 more variables: genre_3 &lt;chr&gt;, description &lt;chr&gt;, director &lt;chr&gt;,
+#   stars &lt;chr&gt;, votes &lt;dbl&gt;, gross &lt;chr&gt;</code></pre>
 </div>
 </section><section><h2 class="section-heading" id="pipes">Pipes<a class="anchor" aria-label="anchor" href="#pipes"></a></h2>
 <hr class="half-width"><p>What if you want to select and filter at the same time? There are
@@ -673,8 +654,8 @@ that as input to the next function, like this:</p>
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie2</span> <span class="op">&lt;-</span> <span class="fu">filter</span><span class="op">(</span><span class="va">movieSerie</span>, <span class="va">age_certification</span> <span class="op">==</span> <span class="st">"PG-13"</span><span class="op">)</span></span>
-<span><span class="va">movieSerie_ch</span> <span class="op">&lt;-</span> <span class="fu">select</span><span class="op">(</span><span class="va">movieSerie2</span>, <span class="va">title</span><span class="op">:</span><span class="va">description</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="va">xmas_movies2</span> <span class="op">&lt;-</span> <span class="fu">filter</span><span class="op">(</span><span class="va">xmas_movies</span>, <span class="va">rating</span> <span class="op">==</span> <span class="st">"PG-13"</span><span class="op">)</span></span>
+<span><span class="va">xmas_movies_ch</span> <span class="op">&lt;-</span> <span class="fu">select</span><span class="op">(</span><span class="va">xmas_movies2</span>, <span class="va">title</span><span class="op">:</span><span class="va">description</span><span class="op">)</span></span></code></pre>
 </div>
 <p>This is readable, but can clutter up your workspace with lots of
 objects that you have to name individually. With multiple steps, that
@@ -685,7 +666,7 @@ like this:</p>
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie_ch</span> <span class="op">&lt;-</span> <span class="fu">select</span><span class="op">(</span><span class="fu">filter</span><span class="op">(</span><span class="va">movieSerie</span>, <span class="va">age_certification</span> <span class="op">==</span> <span class="st">"PG-13"</span><span class="op">)</span>,</span>
+<code class="sourceCode R"><span><span class="va">xmas_movies_ch</span> <span class="op">&lt;-</span> <span class="fu">select</span><span class="op">(</span><span class="fu">filter</span><span class="op">(</span><span class="va">xmas_movies</span>, <span class="va">rating</span> <span class="op">==</span> <span class="st">"PG-13"</span><span class="op">)</span>,</span>
 <span>                         <span class="va">title</span><span class="op">:</span><span class="va">description</span><span class="op">)</span></span></code></pre>
 </div>
 <p>This is handy, as R evaluates the expression from the inside out (in
@@ -704,31 +685,31 @@ RStudio, you can type the pipe with:<br>
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">filter</span><span class="op">(</span><span class="va">age_certification</span> <span class="op">==</span> <span class="st">"PG-13"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<code class="sourceCode R"><span><span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">filter</span><span class="op">(</span><span class="va">rating</span> <span class="op">==</span> <span class="st">"PG-13"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>    <span class="fu">select</span><span class="op">(</span><span class="va">title</span>,<span class="va">description</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 451 × 2
+<pre class="output" tabindex="0"><code># A tibble: 24 × 2
    title                                 description
    &lt;chr&gt;                                 &lt;chr&gt;
- 1 The Professionals                     "An arrogant Texas millionaire hires f…
- 2 Awakenings                            "Dr. Malcolm Sayer, a shy research phy…
- 3 National Lampoon's Christmas Vacation "It's Christmastime, and the Griswolds…
- 4 Lean On Me                            "When principal Joe Clark takes over d…
- 5 Mission: Impossible                   "When Ethan Hunt, the leader of a crac…
- 6 Forrest Gump                          "A man with a low IQ has accomplished …
- 7 Titanic                               "101-year-old Rose DeWitt Bukater tell…
- 8 Mission: Impossible II                "With computer genius Luther Stickell …
- 9 Dumb and Dumber                       "Lloyd and Harry are two men whose stu…
-10 Gattaca                               "In a future society in the era of ind…
-# ℹ 441 more rows</code></pre>
+ 1 National Lampoon's Christmas Vacation The Griswold family's plans for a big …
+ 2 Scrooged                              A selfish, cynical television executiv…
+ 3 Spirited                              A musical version of Charles Dickens's…
+ 4 Last Christmas                        Kate is a young woman subscribed to ba…
+ 5 Four Christmases                      A couple struggles to visit all four o…
+ 6 Happiest Season                       A holiday romantic comedy that capture…
+ 7 Shazam!                               A newly fostered young boy in search o…
+ 8 Surviving Christmas                   A lonely, obnoxious young millionaire …
+ 9 Batman Returns                        While Batman deals with a deformed man…
+10 Edward Scissorhands                   The solitary life of an artificial man…
+# ℹ 14 more rows</code></pre>
 </div>
 <p>In the above code, we use the pipe to send the
-<code>movieSerie</code> dataset first through <code>filter()</code> to
-keep rows where <code>age_certification</code> is “PG-13”, then through
+<code>xmas_movies</code> dataset first through <code>filter()</code> to
+keep rows where <code>rating</code> is “PG-13”, then through
 <code>select()</code> to keep only the <code>title</code> and
 <code>description</code> columns. Since <code>%&gt;%</code> takes the
 object on its left and passes it as the first argument to the function
@@ -737,8 +718,8 @@ argument to the <code>filter()</code> and <code>select()</code>
 functions any more.</p>
 <p>Some may find it helpful to read the pipe like the word “then”. For
 instance, in the above example, we take the dataframe
-<code>movieSerie</code>, <em>then</em> we <code>filter</code> for rows
-with <code>age_certification == "PG-13"</code>, <em>then</em> we
+<code>xmas_movies</code>, <em>then</em> we <code>filter</code> for rows
+with <code>rating == "PG-13"</code>, <em>then</em> we
 <code>select</code> columns <code>title</code> and
 <code>description</code>. The <strong><code>dplyr</code></strong>
 functions by themselves are somewhat simple, but by combining them into
@@ -750,31 +731,31 @@ data, we can assign it a new name:</p>
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie_ch</span> <span class="op">&lt;-</span> <span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">filter</span><span class="op">(</span><span class="va">age_certification</span> <span class="op">==</span> <span class="st">"PG-13"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<code class="sourceCode R"><span><span class="va">xmas_movies_ch</span> <span class="op">&lt;-</span> <span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">filter</span><span class="op">(</span><span class="va">rating</span> <span class="op">==</span> <span class="st">"PG-13"</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>    <span class="fu">select</span><span class="op">(</span><span class="va">title</span>,<span class="va">description</span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">movieSerie_ch</span></span></code></pre>
+<span><span class="va">xmas_movies_ch</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 451 × 2
+<pre class="output" tabindex="0"><code># A tibble: 24 × 2
    title                                 description
    &lt;chr&gt;                                 &lt;chr&gt;
- 1 The Professionals                     "An arrogant Texas millionaire hires f…
- 2 Awakenings                            "Dr. Malcolm Sayer, a shy research phy…
- 3 National Lampoon's Christmas Vacation "It's Christmastime, and the Griswolds…
- 4 Lean On Me                            "When principal Joe Clark takes over d…
- 5 Mission: Impossible                   "When Ethan Hunt, the leader of a crac…
- 6 Forrest Gump                          "A man with a low IQ has accomplished …
- 7 Titanic                               "101-year-old Rose DeWitt Bukater tell…
- 8 Mission: Impossible II                "With computer genius Luther Stickell …
- 9 Dumb and Dumber                       "Lloyd and Harry are two men whose stu…
-10 Gattaca                               "In a future society in the era of ind…
-# ℹ 441 more rows</code></pre>
+ 1 National Lampoon's Christmas Vacation The Griswold family's plans for a big …
+ 2 Scrooged                              A selfish, cynical television executiv…
+ 3 Spirited                              A musical version of Charles Dickens's…
+ 4 Last Christmas                        Kate is a young woman subscribed to ba…
+ 5 Four Christmases                      A couple struggles to visit all four o…
+ 6 Happiest Season                       A holiday romantic comedy that capture…
+ 7 Shazam!                               A newly fostered young boy in search o…
+ 8 Surviving Christmas                   A lonely, obnoxious young millionaire …
+ 9 Batman Returns                        While Batman deals with a deformed man…
+10 Edward Scissorhands                   The solitary life of an artificial man…
+# ℹ 14 more rows</code></pre>
 </div>
-<p>Note that the final dataframe (<code>movieSerie_ch</code>) is the
+<p>Note that the final dataframe (<code>xmas_movies_ch</code>) is the
 leftmost part of this expression.</p>
 <div id="exercise" class="callout discussion">
 <div class="callout-square">
@@ -784,10 +765,10 @@ leftmost part of this expression.</p>
 <div id="exercise" class="callout-inner">
 <h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
-<p>Using pipes, subset the <code>movieSerie</code> data set to include
-movieSerie have a <code>release_year</code> greater than 1980 and retain
-only the columns <code>title</code>, <code>runtime</code>, and
-<code>age_certification</code>.</p>
+<p>Using pipes, subset the <code>xmas_movies</code> data set to include
+movies that have a <code>release_year</code> greater than 1980 and
+retain only the columns <code>title</code>, <code>runtime</code>, and
+<code>rating</code>.</p>
 </div>
 </div>
 </div>
@@ -802,27 +783,17 @@ only the columns <code>title</code>, <code>runtime</code>, and
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
+<code class="sourceCode R"><span><span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
 <span>     <span class="fu">filter</span><span class="op">(</span><span class="va">release_year</span> <span class="op">&gt;</span> <span class="fl">1980</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>     <span class="fu">select</span><span class="op">(</span><span class="va">title</span>, <span class="va">runtime</span>, <span class="va">age_certification</span><span class="op">)</span></span></code></pre>
+<span>     <span class="fu">select</span><span class="op">(</span><span class="va">title</span>, <span class="va">runtime</span>, <span class="va">rating</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 5,815 × 3
-   title                       runtime age_certification
-   &lt;chr&gt;                         &lt;dbl&gt; &lt;chr&gt;
- 1 Seinfeld                         24 TV-PG
- 2 GoodFellas                      145 R
- 3 Full Metal Jacket               117 R
- 4 Once Upon a Time in America     139 R
- 5 When Harry Met Sally...          96 R
- 6 A Nightmare on Elm Street        91 R
- 7 Steel Magnolias                 119 PG
- 8 Police Academy                   97 R
- 9 Christine                       110 R
-10 Knight Rider                     51 TV-PG
-# ℹ 5,805 more rows</code></pre>
+<pre class="error" tabindex="0"><code>Error in `filter()` at dplyr/R/select.R:54:3:
+ℹ In argument: `release_year &gt; 1980`.
+Caused by error:
+! object 'release_year' not found</code></pre>
 </div>
 </div>
 </div>
@@ -839,27 +810,27 @@ vs tmdb:</p>
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>score_difference <span class="op">=</span> <span class="va">imdb_score</span> <span class="op">-</span> <span class="va">tmdb_score</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
-<span>  <span class="fu">select</span><span class="op">(</span><span class="va">imdb_score</span>, <span class="va">tmdb_score</span>, <span class="va">score_difference</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>score_difference <span class="op">=</span> <span class="va">imdb_rating</span> <span class="op">-</span> <span class="va">tmdb_rating</span><span class="op">)</span> <span class="op">%&gt;%</span> </span>
+<span>  <span class="fu">select</span><span class="op">(</span><span class="va">imdb_rating</span>, <span class="va">tmdb_rating</span>, <span class="va">score_difference</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 5,850 × 3
-   imdb_score tmdb_score score_difference
-        &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;
- 1       NA        NA             NA
- 2        8.2       8.18           0.0210
- 3        7.7       7.3            0.400
- 4        8.2       7.81           0.389
- 5        7.7       7.6            0.100
- 6        8.8       8.31           0.494
- 7        8         7.8            0.200
- 8        7.7       7.5            0.200
- 9        7.7       7.5            0.200
-10        5.8       6.16          -0.356
-# ℹ 5,840 more rows</code></pre>
+<pre class="output" tabindex="0"><code># A tibble: 873 × 3
+   imdb_rating tmdb_rating score_difference
+         &lt;dbl&gt;       &lt;dbl&gt;            &lt;dbl&gt;
+ 1         7.6         4.3            3.3
+ 2         7.7         8.8           -1.10
+ 3         7.5         7.1            0.400
+ 4         7.1         6              1.1
+ 5         6.3         2.5            3.8
+ 6         6.4         2.5            3.9
+ 7         8.2         1.8            6.4
+ 8         6.9         8.1           -1.2
+ 9         6.6         6              0.600
+10         8.6         6.9            1.7
+# ℹ 863 more rows</code></pre>
 </div>
 <div id="exercise-1" class="callout challenge">
 <div class="callout-square">
@@ -869,11 +840,11 @@ vs tmdb:</p>
 <div id="exercise-1" class="callout-inner">
 <h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
-<p>Create a new dataframe from the <code>movieSerie</code> data set that
-meets the following criteria: contains only the <code>title</code>
+<p>Create a new dataframe from the <code>xmas_movies</code> data set
+that meets the following criteria: contains only the <code>title</code>
 column and a new column called <code>total_score</code> containing a
 value that is equal to the total number of scores on both imdb and tmdb
-(<code>imdb_score</code> plus <code>tmdb_score</code>). Only the rows
+(<code>imdb_rating</code> plus <code>tmdb_rating</code>). Only the rows
 where <code>total_score</code> is greater than 15 should be shown in the
 final dataframe.</p>
 <p><strong>Hint</strong>: think about how the commands should be ordered
@@ -892,8 +863,8 @@ to produce the data frame!</p>
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie_total_score</span> <span class="op">&lt;-</span> <span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">mutate</span><span class="op">(</span>total_score <span class="op">=</span> <span class="va">imdb_score</span> <span class="op">+</span> <span class="va">tmdb_score</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<code class="sourceCode R"><span><span class="va">xmas_movies_total_score</span> <span class="op">&lt;-</span> <span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">mutate</span><span class="op">(</span>total_score <span class="op">=</span> <span class="va">imdb_rating</span> <span class="op">+</span> <span class="va">tmdb_rating</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">filter</span><span class="op">(</span><span class="va">total_score</span> <span class="op">&gt;</span> <span class="fl">15</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">select</span><span class="op">(</span><span class="va">title</span>, <span class="va">total_score</span><span class="op">)</span></span></code></pre>
 </div>
@@ -914,40 +885,21 @@ of the <code>group_by()</code> function.</p>
 summary of that group. <code>group_by()</code> takes as arguments the
 column names that contain the <strong>categorical</strong> variables for
 which you want to calculate the summary statistics. So to compute the
-average imdb_score by genre:</p>
+average imdb_rating by genre:</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
+<code class="sourceCode R"><span><span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
 <span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">genre</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">summarize</span><span class="op">(</span>mean_imdb_score <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">imdb_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<span>    <span class="fu">summarize</span><span class="op">(</span>mean_imdb_rating <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">imdb_rating</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 19 × 2
-   genre         mean_imdb_score
-   &lt;chr&gt;                   &lt;dbl&gt;
- 1 action                   6.28
- 2 animation                6.55
- 3 comedy                   6.33
- 4 crime                    6.73
- 5 documentation            7.07
- 6 drama                    6.73
- 7 family                   6.21
- 8 fantasy                  6.23
- 9 history                  6.69
-10 horror                   5.45
-11 music                    6.62
-12 reality                  6.32
-13 romance                  6.07
-14 scifi                    6.69
-15 sport                    6.68
-16 thriller                 6.12
-17 war                      6.98
-18 western                  6.23
-19 &lt;NA&gt;                     7.25</code></pre>
+<pre class="error" tabindex="0"><code>Error in `group_by()` at dplyr/R/summarise.R:128:3:
+! Must group by variables found in `.data`.
+✖ Column `genre` is not found.</code></pre>
 </div>
 <p>You may also have noticed that the output from these calls doesn’t
 run off the screen anymore. It’s one of the advantages of
@@ -957,183 +909,99 @@ run off the screen anymore. It’s one of the advantages of
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
+<code class="sourceCode R"><span><span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
 <span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">genre</span>, <span class="va">type</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">summarize</span><span class="op">(</span>mean_imdb_score <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">imdb_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<span>    <span class="fu">summarize</span><span class="op">(</span>mean_imdb_rating <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">imdb_rating</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'genre'. You can override using the
-`.groups` argument.</code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code># A tibble: 38 × 3
-# Groups:   genre [19]
-   genre         type  mean_imdb_score
-   &lt;chr&gt;         &lt;chr&gt;           &lt;dbl&gt;
- 1 action        MOVIE            5.94
- 2 action        SHOW             6.87
- 3 animation     MOVIE            6.32
- 4 animation     SHOW             6.68
- 5 comedy        MOVIE            6.09
- 6 comedy        SHOW             6.98
- 7 crime         MOVIE            6.39
- 8 crime         SHOW             7.09
- 9 documentation MOVIE            6.99
-10 documentation SHOW             7.18
-# ℹ 28 more rows</code></pre>
+<pre class="error" tabindex="0"><code>Error in `group_by()` at dplyr/R/summarise.R:128:3:
+! Must group by variables found in `.data`.
+Column `genre` is not found.
+Column `type` is not found.</code></pre>
 </div>
 <p>Note that the output is a grouped tibble. To obtain an ungrouped
 tibble, use the <code>ungroup</code> function:</p>
-<div class="codewrapper sourceCode" id="cb29">
+<div class="codewrapper sourceCode" id="cb28">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
+<code class="sourceCode R"><span><span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
 <span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">genre</span>, <span class="va">type</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">summarize</span><span class="op">(</span>mean_imdb_score <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">imdb_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">summarize</span><span class="op">(</span>mean_imdb_rating <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">imdb_rating</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>    <span class="fu">ungroup</span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'genre'. You can override using the
-`.groups` argument.</code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code># A tibble: 38 × 3
-   genre         type  mean_imdb_score
-   &lt;chr&gt;         &lt;chr&gt;           &lt;dbl&gt;
- 1 action        MOVIE            5.94
- 2 action        SHOW             6.87
- 3 animation     MOVIE            6.32
- 4 animation     SHOW             6.68
- 5 comedy        MOVIE            6.09
- 6 comedy        SHOW             6.98
- 7 crime         MOVIE            6.39
- 8 crime         SHOW             7.09
- 9 documentation MOVIE            6.99
-10 documentation SHOW             7.18
-# ℹ 28 more rows</code></pre>
+<pre class="error" tabindex="0"><code>Error in `group_by()` at dplyr/R/summarise.R:128:3:
+! Must group by variables found in `.data`.
+Column `genre` is not found.
+Column `type` is not found.</code></pre>
 </div>
 <p>Once the data are grouped, you can also summarize multiple variables
 at the same time (and not necessarily on the same variable). For
-instance, we could add a column indicating the maximum imdb_score given
+instance, we could add a column indicating the maximum imdb_rating given
 to a movie or serie:</p>
+<div class="codewrapper sourceCode" id="cb30">
+<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">genre</span>, <span class="va">type</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">summarize</span><span class="op">(</span>mean_imdb_rating <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">imdb_rating</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>              max_imdb_rating <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">imdb_rating</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+</div>
+<div class="codewrapper">
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="error" tabindex="0"><code>Error in `group_by()` at dplyr/R/summarise.R:128:3:
+! Must group by variables found in `.data`.
+Column `genre` is not found.
+Column `type` is not found.</code></pre>
+</div>
+<p>It is sometimes useful to rearrange the result of a query to inspect
+the values. For instance, we can sort on <code>min_imdb_rating</code> to
+put the group with the smallest imdb_rating first:</p>
 <div class="codewrapper sourceCode" id="cb32">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
+<code class="sourceCode R"><span><span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
 <span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">genre</span>, <span class="va">type</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">summarize</span><span class="op">(</span>mean_imdb_score <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">imdb_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>              max_imdb_score <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">imdb_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<span>    <span class="fu">summarize</span><span class="op">(</span>mean_imdb_rating <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">imdb_rating</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>              max_imdb_rating <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">imdb_rating</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">arrange</span><span class="op">(</span><span class="va">max_imdb_rating</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'genre'. You can override using the
-`.groups` argument.</code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code># A tibble: 38 × 4
-# Groups:   genre [19]
-   genre         type  mean_imdb_score max_imdb_score
-   &lt;chr&gt;         &lt;chr&gt;           &lt;dbl&gt;          &lt;dbl&gt;
- 1 action        MOVIE            5.94            9.1
- 2 action        SHOW             6.87            9
- 3 animation     MOVIE            6.32            9.1
- 4 animation     SHOW             6.68            9
- 5 comedy        MOVIE            6.09            8.7
- 6 comedy        SHOW             6.98            9.2
- 7 crime         MOVIE            6.39            8.6
- 8 crime         SHOW             7.09            8.8
- 9 documentation MOVIE            6.99            8.9
-10 documentation SHOW             7.18            9.3
-# ℹ 28 more rows</code></pre>
-</div>
-<p>It is sometimes useful to rearrange the result of a query to inspect
-the values. For instance, we can sort on <code>min_imdb_score</code> to
-put the group with the smallest imdb_score first:</p>
-<div class="codewrapper sourceCode" id="cb35">
-<h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">genre</span>, <span class="va">type</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">summarize</span><span class="op">(</span>mean_imdb_score <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">imdb_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>              max_imdb_score <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">imdb_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">arrange</span><span class="op">(</span><span class="va">max_imdb_score</span><span class="op">)</span></span></code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'genre'. You can override using the
-`.groups` argument.</code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code># A tibble: 38 × 4
-# Groups:   genre [19]
-   genre   type  mean_imdb_score max_imdb_score
-   &lt;chr&gt;   &lt;chr&gt;           &lt;dbl&gt;          &lt;dbl&gt;
- 1 music   SHOW             6.3             6.9
- 2 horror  SHOW             6.19            7
- 3 sport   MOVIE            6.27            7.4
- 4 history MOVIE            6.43            7.5
- 5 reality MOVIE            7.15            7.5
- 6 western SHOW             7.45            7.6
- 7 family  MOVIE            5.81            7.7
- 8 fantasy SHOW             6.87            7.7
- 9 &lt;NA&gt;    MOVIE            7.1             7.7
-10 sport   SHOW             7.9             7.9
-# ℹ 28 more rows</code></pre>
+<pre class="error" tabindex="0"><code>Error in `group_by()` at dplyr/R/summarise.R:128:3:
+! Must group by variables found in `.data`.
+Column `genre` is not found.
+Column `type` is not found.</code></pre>
 </div>
 <p>To sort in descending order, we need to add the <code>desc()</code>
 function. If we want to sort the results by decreasing order of minimum
-imdb_score:</p>
-<div class="codewrapper sourceCode" id="cb38">
+imdb_rating:</p>
+<div class="codewrapper sourceCode" id="cb34">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
+<code class="sourceCode R"><span><span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
 <span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">genre</span>, <span class="va">type</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">summarize</span><span class="op">(</span>mean_imdb_score <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">imdb_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>              max_imdb_score <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">imdb_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>    <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">max_imdb_score</span><span class="op">)</span><span class="op">)</span></span></code></pre>
+<span>    <span class="fu">summarize</span><span class="op">(</span>mean_imdb_rating <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">imdb_rating</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>              max_imdb_rating <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">imdb_rating</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
+<span>    <span class="fu">arrange</span><span class="op">(</span><span class="fu">desc</span><span class="op">(</span><span class="va">max_imdb_rating</span><span class="op">)</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'genre'. You can override using the
-`.groups` argument.</code></pre>
-</div>
-<div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="output" tabindex="0"><code># A tibble: 38 × 4
-# Groups:   genre [19]
-   genre         type  mean_imdb_score max_imdb_score
-   &lt;chr&gt;         &lt;chr&gt;           &lt;dbl&gt;          &lt;dbl&gt;
- 1 &lt;NA&gt;          SHOW             7.32            9.6
- 2 drama         SHOW             7.19            9.5
- 3 reality       SHOW             6.31            9.5
- 4 documentation SHOW             7.18            9.3
- 5 scifi         SHOW             7.08            9.3
- 6 comedy        SHOW             6.98            9.2
- 7 action        MOVIE            5.94            9.1
- 8 animation     MOVIE            6.32            9.1
- 9 action        SHOW             6.87            9
-10 animation     SHOW             6.68            9
-# ℹ 28 more rows</code></pre>
+<pre class="error" tabindex="0"><code>Error in `group_by()` at dplyr/R/summarise.R:128:3:
+! Must group by variables found in `.data`.
+Column `genre` is not found.
+Column `type` is not found.</code></pre>
 </div>
 </div>
 <div class="section level4">
@@ -1143,57 +1011,35 @@ observations found for each factor or combination of factors. For this
 task, <strong><code>dplyr</code></strong> provides <code>count()</code>.
 For example, if we wanted to count the number of rows of data for each
 village, we would do:</p>
-<div class="codewrapper sourceCode" id="cb41">
+<div class="codewrapper sourceCode" id="cb36">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
+<code class="sourceCode R"><span><span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
 <span>    <span class="fu">count</span><span class="op">(</span><span class="va">release_year</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 63 × 2
-   release_year     n
-          &lt;dbl&gt; &lt;int&gt;
- 1         1945     1
- 2         1954     2
- 3         1956     1
- 4         1958     1
- 5         1959     1
- 6         1960     1
- 7         1961     1
- 8         1963     1
- 9         1966     1
-10         1967     2
-# ℹ 53 more rows</code></pre>
+<pre class="error" tabindex="0"><code>Error in `count()` at magrittr/R/pipe.R:136:3:
+! Must group by variables found in `.data`.
+✖ Column `release_year` is not found.</code></pre>
 </div>
 <p>For convenience, <code>count()</code> provides the <code>sort</code>
 argument to get results in decreasing order:</p>
-<div class="codewrapper sourceCode" id="cb43">
+<div class="codewrapper sourceCode" id="cb38">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
+<code class="sourceCode R"><span><span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
 <span>    <span class="fu">count</span><span class="op">(</span><span class="va">release_year</span>, sort <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 63 × 2
-   release_year     n
-          &lt;dbl&gt; &lt;int&gt;
- 1         2019   836
- 2         2020   814
- 3         2021   787
- 4         2018   773
- 5         2017   563
- 6         2022   371
- 7         2016   362
- 8         2015   223
- 9         2014   153
-10         2013   135
-# ℹ 53 more rows</code></pre>
+<pre class="error" tabindex="0"><code>Error in `count()` at magrittr/R/pipe.R:136:3:
+! Must group by variables found in `.data`.
+✖ Column `release_year` is not found.</code></pre>
 </div>
 <div id="exercise-2" class="callout challenge">
 <div class="callout-square">
@@ -1203,10 +1049,9 @@ argument to get results in decreasing order:</p>
 <div id="exercise-2" class="callout-inner">
 <h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
-<ol style="list-style-type: decimal"><li><p>How many moview and series are there for each
-age_certification?</p></li>
+<ol style="list-style-type: decimal"><li><p>How many moview and series are there for each rating?</p></li>
 <li><p>Use <code>group_by()</code> and <code>summarize()</code> to find
-the mean, min, and max for tmdb_score. Also add the number of
+the mean, min, and max for imdb_rating. Also add the number of
 observations (hint: see <code>?n</code>).</p></li>
 </ol></div>
 </div>
@@ -1218,31 +1063,32 @@ observations (hint: see <code>?n</code>).</p></li>
 </button>
 <div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb45">
+<div class="codewrapper sourceCode" id="cb40">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span> <span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu">count</span><span class="op">(</span><span class="va">age_certification</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span> <span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
+<span>  <span class="fu">count</span><span class="op">(</span><span class="va">rating</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 12 × 2
-   age_certification     n
-   &lt;chr&gt;             &lt;int&gt;
- 1 ""                 2619
- 2 "G"                 124
- 3 "NC-17"              16
- 4 "PG"                233
- 5 "PG-13"             451
- 6 "R"                 556
- 7 "TV-14"             474
- 8 "TV-G"               79
- 9 "TV-MA"             883
-10 "TV-PG"             188
-11 "TV-Y"              107
-12 "TV-Y7"             120</code></pre>
+<pre class="output" tabindex="0"><code># A tibble: 13 × 2
+   rating       n
+   &lt;chr&gt;    &lt;int&gt;
+ 1 Approved    20
+ 2 G           29
+ 3 PG          72
+ 4 PG-13       24
+ 5 Passed      18
+ 6 R           15
+ 7 TV-14       16
+ 8 TV-G       262
+ 9 TV-MA        5
+10 TV-PG      131
+11 TV-Y         4
+12 Unrated     10
+13 &lt;NA&gt;       267</code></pre>
 </div>
 </div>
 </div>
@@ -1255,44 +1101,25 @@ observations (hint: see <code>?n</code>).</p></li>
 </button>
 <div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
-<div class="codewrapper sourceCode" id="cb47">
+<div class="codewrapper sourceCode" id="cb42">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">movieSerie</span> <span class="op">%&gt;%</span></span>
+<code class="sourceCode R"><span><span class="va">xmas_movies</span> <span class="op">%&gt;%</span></span>
 <span>  <span class="fu">group_by</span><span class="op">(</span><span class="va">genre</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
 <span>   <span class="fu">summarize</span><span class="op">(</span></span>
-<span>       mean_tmdb_score <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">tmdb_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>       min_tmdb_score <span class="op">=</span> <span class="fu">min</span><span class="op">(</span><span class="va">tmdb_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>       max_tmdb_score <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">tmdb_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>       mean_tmdb_rating <span class="op">=</span> <span class="fu">mean</span><span class="op">(</span><span class="va">tmdb_rating</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>       min_tmdb_rating <span class="op">=</span> <span class="fu">min</span><span class="op">(</span><span class="va">tmdb_rating</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>       max_tmdb_rating <span class="op">=</span> <span class="fu">max</span><span class="op">(</span><span class="va">tmdb_rating</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
 <span>       n <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span></span>
 <span>   <span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 19 × 5
-   genre         mean_tmdb_score min_tmdb_score max_tmdb_score     n
-   &lt;chr&gt;                   &lt;dbl&gt;          &lt;dbl&gt;          &lt;dbl&gt; &lt;int&gt;
- 1 action                   6.75            2            10      365
- 2 animation                7.31            2            10      317
- 3 comedy                   6.59            1            10     1305
- 4 crime                    6.92            3.8          10      238
- 5 documentation            7.11            1            10      665
- 6 drama                    6.96            1            10     1421
- 7 family                   7.14            1            10      113
- 8 fantasy                  6.77            2            10       88
- 9 history                  6.94            5.8          10       21
-10 horror                   5.83            2.8           8.5    114
-11 music                    7.09            5.3           8.8     59
-12 reality                  7.19            1            10      171
-13 romance                  6.42            2             9.3    232
-14 scifi                    7.17            0.5           9.5    239
-15 sport                    6.8             5             8.3      4
-16 thriller                 6.39            3.7          10      377
-17 war                      6.93            4.8           8.8     46
-18 western                  6.30            3.6           8.15    16
-19 &lt;NA&gt;                     7.06            1            10       59</code></pre>
+<pre class="error" tabindex="0"><code>Error in `group_by()` at dplyr/R/summarise.R:128:3:
+! Must group by variables found in `.data`.
+✖ Column `genre` is not found.</code></pre>
 </div>
 </div>
 </div>
@@ -1318,11 +1145,11 @@ modify it. In contrast, our script will generate the contents of the
 deleted, we can always re-generate them.</p>
 <p>Now we can save this dataframe to our <code>data_output</code>
 directory.</p>
-<div class="codewrapper sourceCode" id="cb49">
+<div class="codewrapper sourceCode" id="cb44">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">write_csv</span><span class="op">(</span><span class="va">movieSerie_ch</span>, file <span class="op">=</span> <span class="st">"data_output/movieSerie_changed.csv"</span><span class="op">)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="fu">write_csv</span><span class="op">(</span><span class="va">xmas_movies_ch</span>, file <span class="op">=</span> <span class="st">"data_output/xmas_movies_changed.csv"</span><span class="op">)</span></span></code></pre>
 </div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
