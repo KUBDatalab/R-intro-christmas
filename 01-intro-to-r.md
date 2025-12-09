@@ -783,11 +783,11 @@ movies "FTA" and "Dostana" we can do it like this.
 
 
 ``` r
-imdb_score[title %in% c("Die Hard", "Home Alone")]
+imdb_rating[title %in% c("Die Hard", "Home Alone")]
 ```
 
-``` error
-Error: object 'imdb_score' not found
+``` output
+[1] 7.7 8.2
 ```
 
 
@@ -867,7 +867,8 @@ sum(is.na(imdb_rating_na))
 ```
 
 ``` r
-## Returns the object with incomplete cases removed. The returned object is an atomic vector of type `"numeric"` (or `"double"`).
+# Returns the object with incomplete cases removed. The returned 
+# object is an atomic vector of type `"numeric"` (or `"double"`).
 na.omit(imdb_rating_na)
 ```
 
@@ -880,7 +881,8 @@ attr(,"class")
 ```
 
 ``` r
-## Extract those elements which are complete cases. The returned object is an atomic vector of type `"numeric"` (or `"double"`).
+# Extract those elements which are complete cases. The 
+# returned object is an atomic vector of type `"numeric"` (or `"double"`).
 imdb_rating_na[complete.cases(imdb_rating_na)]
 ```
 

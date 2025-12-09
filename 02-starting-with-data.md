@@ -48,15 +48,16 @@ The data set we will import is xmas_movies.csv. It is list of Christmas movies I
 
 | column_name | description |
 | ----------- | ----------- |
-| title | The title of the movie or serie |
+| title | The title of the movie |
 | rating | Information about which age group the movie is suitable for |
-| runtime | How long the movie is |
+| runtime | Duration of the movie |
 | imdb_rating | The score of the movie or serie in the IMDB database |
 | tmdb_rating | The score of the movie or serie in the movie database |
 | meta_score | A combination different scores |
 | genre_1 | Genre |
 | genre_2 | Genre |
 | genre_3 | Genre |
+| release_year | The year the movie was released |
 | description | A short description of the movie |
 | director | Name of the director of the movie |
 | stars | The movie's main actors |
