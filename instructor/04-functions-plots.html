@@ -356,15 +356,14 @@ in the data in a new object</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>New names:
-Rows: 873 Columns: 16
-── Column specification
-──────────────────────────────────────────────────────── Delimiter: "," chr
-(9): title, rating, genre_1, genre_2, genre_3, description, director, st... dbl
-(7): ...1, runtime, imdb_rating, tmdb_rating, meta_score, release_year, ...
-ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
-Specify the column types or set `show_col_types = FALSE` to quiet this message.
-• `` -&gt; `...1`</code></pre>
+<pre class="output" tabindex="0"><code>Rows: 873 Columns: 15
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (9): title, rating, genre_1, genre_2, genre_3, description, director, st...
+dbl (6): runtime, imdb_rating, tmdb_rating, meta_score, release_year, votes
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 <section><h2 class="section-heading" id="scatterplots">Scatterplots<a class="anchor" aria-label="anchor" href="#scatterplots"></a></h2>
 <hr class="half-width"><p>Scatterplots visualizes the relation between two variables in the
@@ -587,7 +586,7 @@ solution is.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>[1] 4.559126</code></pre>
+<pre class="output" tabindex="0"><code>[1] 6.70555</code></pre>
 </div>
 <p>More than double as fast! To be fair most of the time is spent
 outputting the results, but as a general rule utilizing the vectorized
