@@ -138,8 +138,8 @@ the object name:
 
 
 ``` r
-area_hectares <- 1.0    # doesn't print anything
-area_hectares         # but typing the name of the object print
+coal_in_pounds <- 1.0    # doesn't print anything
+coal_in_pounds         # but typing the name of the object print
 ```
 
 ``` output
@@ -147,7 +147,7 @@ area_hectares         # but typing the name of the object print
 ```
 
 ``` r
-(area_hectares <- 1.0)  # putting parenthesis around the call also print
+(coal_in_pounds <- 1.0)  # putting parenthesis around the call also print
 ```
 
 ``` output
@@ -156,54 +156,54 @@ area_hectares         # but typing the name of the object print
 
 ### Doing math on objects
 
-Now that R has `area_hectares` in memory, we can do arithmetic with it. For instance, we may want to convert this area into acres (area in acres is 2.47 times the area in hectares): 
+Now that R has `coal_in_pounds` in memory, we can do arithmetic with it. For instance, we may want to convert this coal in pounds into coal in kilograms (coal in kilgrams is coal in pounds times 0.45): 
 
 
 ``` r
-2.47 * area_hectares
+0.45 * coal_in_pounds
 ```
 
 ``` output
-[1] 2.47
+[1] 0.45
 ```
 
 We can also change an object’s value by assigning it a new one:
 
 
 ``` r
-area_hectares <- 2.5
-2.47 * area_hectares
+coal_in_pounds <- 2.00
+0.45 * coal_in_pounds
 ```
 
 ``` output
-[1] 6.175
+[1] 0.9
 ```
 
-Assigning a value to one object does not automatically change the values of other objects. For example, let’s store the plot’s area in acres in a new object, `area_acres`:
+Assigning a value to one object does not automatically change the values of other objects. For example, let’s store the the amount of coal in kilograms in a new object, `coal_in_kilograms`:
 
 
 ``` r
-area_acres <- 2.47 * area_hectares
+coal_in_kilograms <- 0.45 * coal_in_pounds
 ```
 
-and then change `area_hectares` to 50.
+and then change `coal_in_pounds` to 50.
 
 
 ``` r
-area_hectares <- 50
+coal_in_pounds <- 50
 ```
 
 ::::::::::::::::::::::::::::::::::::: challenge
 ## Exercise
-What do you think is the current content of the object `area_acres`? 123.5 or 6.175?
+What do you think is the current content of the object `coal_in_pounds`? .0.9 or 22.5?
 
 :::::::::::::::::::::::: solution
 
 ## Solution
 
-The value of `area_acres` is still 6.175 because you have not
-re-run the line `area_acres <- 2.47 * area_hectares` since
-changing the value of `area_hectares`.
+The value of `coal_in_kilograms` is still 0.9 because you have not
+re-run the line `coal_in_kilograms <- 0.45 * coal_in_pounds`, since
+changing the value of `coal_in_pounds`.
 
 :::::::::::::::::::::::::::::::::
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -212,14 +212,14 @@ changing the value of `area_hectares`.
 
 ## Exercise
 
-Create two variables `r_length` and `r_width` and assign them values. It should be noted that, 
-because `length` is a built-in R function, R Studio might add "()" after you type `length` and 
+Create two variables `rows_of_reindeer` and `columns_of_reindeer` and assign them values. It should be noted that, 
+because `row` is a built-in R function, R Studio might add "()" after you type `row` and 
 if you leave the parentheses you will get unexpected results. 
 This is why you might see other programmers abbreviate common words.
-Create a third variable `r_area` and give it a value based on the current values of `r_length` 
-and `r_width`.
-Show that changing the values of either `r_length` and `r_width` does not affect the value of 
-`r_area`.
+Create a third variable `number_of_reindeer` and give it a value based on the current values of `rows_of_reindeer` 
+and `columns_of_reindeer`.
+Show that changing the values of either `number_of_reindeer` and `rows_of_reindeer` does not affect the value of 
+`number_of_reindeer`.
 
 :::::::::::::::::::::::: solution
 
@@ -227,10 +227,11 @@ Show that changing the values of either `r_length` and `r_width` does not affect
 
 
 ``` r
-r_length <- 2.5
-r_width <- 3.2
-r_area <- r_length * r_width
-r_area
+rows_of_reindeer <- 4
+columns_of_reindeer <- 2
+number_of_reindeer <- rows_of_reindeer * columns_of_reindeer
+
+number_of_reindeer
 ```
 
 ``` output
@@ -238,11 +239,12 @@ r_area
 ```
 
 ``` r
-# change the values of r_length and r_width
-r_length <- 7.0
-r_width <- 6.5
+# change the values of rows_of_reindeer and columns_of_reindeer
+rows_of_reindeer <- 7
+columns_of_reindeer <- 6
+
 # the value of r_area isn't changed
-r_area
+number_of_reindeer
 ```
 
 ``` output
@@ -260,14 +262,14 @@ or include them after any code on the line.
 
 
 ``` r
-# land area in hectares
-area_hectares <- 1.0			
-area_acres <- area_hectares * 2.47	# convert to acres
-area_acres				# print land area in acres.
+# pounds converted to kilograms
+coal_in_pounds <- 1.0			
+coal_in_kilograms <- coal_in_pounds * 0.45	# convert to kilograms
+coal_in_kilograms				# print coal in kilograms
 ```
 
 ``` output
-[1] 2.47
+[1] 0.45
 ```
 
 RStudio makes it easy to comment or uncomment a paragraph: after selecting the
@@ -291,7 +293,7 @@ is called *calling* the function. An example of a function call is:
 
 
 ``` r
-b <- sqrt(area_acres)
+b <- sqrt(number_of_reindeer)
 ```
 Here, the value of `a` is given to the `sqrt()` function, the `sqrt()` function
 calculates the square root, and returns the value which is then assigned to
@@ -400,33 +402,33 @@ A vector is the most common and basic data type in R, and is pretty much
 the workhorse of R. A vector is composed by a series of values. We can assign a 
 series of values to a vector using the `c()` function. For example we can 
 create a vector containing the score of movies on imdb and assign it to an 
-object `imdb_score`:
+object `imdb_rating`:
 
 
 ``` r
-imdb_score <- c(62, 21, 77, 80)
-imdb_score
+imdb_rating <- c(7.6, 7.7, 6.4, 8.2)
+imdb_rating
 ```
 
 ``` output
-[1] 62 21 77 80
+[1] 7.6 7.7 6.4 8.2
 ```
 
-The vector `imdb_score` contains numbers, but a vector can also contain characters. For example, we can have
+The vector `imdb_rating` contains numbers, but a vector can also contain characters. For example, we can have
 a vector of movie titles corresponding to the scores (`title`):
 
 
 ``` r
-title <- c("FTA", "Dostana", "Deliverance", "Life of Brian")
+title <- c("Love Actually", "Home Alone", "The Grinch", "Die Hard")
 title
 ```
 
 ``` output
-[1] "FTA"           "Dostana"       "Deliverance"   "Life of Brian"
+[1] "Love Actually" "Home Alone"    "The Grinch"    "Die Hard"     
 ```
 
-The quotes around "FTA", etc. are essential. Without the quotes R
-will assume there are objects called `FTA` etc. As these objects
+The quotes around "Die Hard", etc. are essential. Without the quotes R
+will assume there are objects called `Die Hard` etc. As these objects
 don't exist in R's memory, there will be an error message.
 
 An important feature of a vector, is that all of the elements are the same type of data.
@@ -456,7 +458,7 @@ The function `class()` indicates the class (the type of element) of an object:
 
 
 ``` r
-class(imdb_score)
+class(imdb_rating)
 ```
 
 ``` output
@@ -477,11 +479,11 @@ objects:
 
 
 ``` r
-str(imdb_score)
+str(imdb_rating)
 ```
 
 ``` output
- num [1:4] 62 21 77 80
+ num [1:4] 7.6 7.7 6.4 8.2
 ```
 
 ``` r
@@ -489,7 +491,7 @@ str(title)
 ```
 
 ``` output
- chr [1:4] "FTA" "Dostana" "Deliverance" "Life of Brian"
+ chr [1:4] "Love Actually" "Home Alone" "The Grinch" "Die Hard"
 ```
 
 As you can see there are many functions that allow you to inspect the content 
@@ -498,7 +500,7 @@ in a particular vector:
 
 
 ``` r
-length(imdb_score)
+length(imdb_rating)
 ```
 
 ``` output
@@ -508,28 +510,28 @@ length(imdb_score)
 You can use the `c()` function to add other elements to your vector:
 
 ``` r
-production_country <- c("IN", "US")
-production_country
+genre_1 <- c("Comedy", "Animation")
+genre_1
 ```
 
 ``` output
-[1] "IN" "US"
+[1] "Comedy"    "Animation"
 ```
 
 ``` r
-production_country <- c(production_country, "GB") # add to the end of the vector
-production_country <- c("US", production_country) # add to the beginning of the vector
-production_country
+genre_1 <- c(genre_1, "Action") # add to the end of the vector
+genre_1 <- c("Comedy", genre_1) # add to the beginning of the vector
+genre_1
 ```
 
 ``` output
-[1] "US" "IN" "US" "GB"
+[1] "Comedy"    "Comedy"    "Animation" "Action"   
 ```
 
-First the vector `production_country` is created with two values. Then the value
-"GB" is added to the end of the vector, and the result is saved back into 
-`production_country`. After that the value "US" is added to the front of the 
-vector, and again saved back into `production_country`
+First the vector `genre_1` is created with two values. Then the value
+"Action" is added to the end of the vector, and the result is saved back into 
+`genre_1`. After that the value "Comedy" is added to the front of the 
+vector, and again saved back into `genre_1`
 
 We can do this over and over again to grow a vector, or assemble a dataset.
 As we program, this may be useful to add results that we are collecting or
@@ -628,7 +630,7 @@ title[2]
 ```
 
 ``` output
-[1] "Dostana"
+[1] "Home Alone"
 ```
 
 ``` r
@@ -636,7 +638,7 @@ title[c(3, 2)]
 ```
 
 ``` output
-[1] "Deliverance" "Dostana"    
+[1] "The Grinch" "Home Alone"
 ```
 
 First R return the second element from the title vector, and after that R 
@@ -653,16 +655,16 @@ original one:
 
 
 ``` r
-more_title <- title[c(1, 2, 3, 2, 1, 3)]
-more_title
+more_titles <- title[c(1, 2, 3, 2, 1, 3)]
+more_titles
 ```
 
 ``` output
-[1] "FTA"         "Dostana"     "Deliverance" "Dostana"     "FTA"        
-[6] "Deliverance"
+[1] "Love Actually" "Home Alone"    "The Grinch"    "Home Alone"   
+[5] "Love Actually" "The Grinch"   
 ```
 
-Here we create an new vector `more_title` containing the elements from title in 
+Here we create an new vector `more_titles` containing the elements from title in 
 the order given in the `c` function
 
 ### Conditional subsetting
@@ -674,33 +676,33 @@ index, while `FALSE` will not:
 
 
 ``` r
-imdb_score[c(TRUE, FALSE, TRUE, TRUE)]
+imdb_rating[c(TRUE, FALSE, TRUE, TRUE)]
 ```
 
 ``` output
-[1] 62 77 80
+[1] 7.6 6.4 8.2
 ```
 
 Typically, these logical vectors are not typed by hand, but are the output of
 other functions or logical tests. For instance, if you wanted to select only the
-imdb_scores above 70:
+imdb_scores above 5:
 
 
 ``` r
-imdb_score > 70    # will return logicals with TRUE for the indices that meet the condition
+imdb_rating > 5    # will return logicals with TRUE for the indices that meet the condition
 ```
 
 ``` output
-[1] FALSE FALSE  TRUE  TRUE
+[1] TRUE TRUE TRUE TRUE
 ```
 
 ``` r
-## so we can use this to select only the values above 70
-imdb_score[imdb_score > 70]
+## so we can use this to select only the values above 5
+imdb_rating[imdb_rating > 5]
 ```
 
 ``` output
-[1] 77 80
+[1] 7.6 7.7 6.4 8.2
 ```
 
 You can combine multiple tests using `&` (both conditions are true (AND)) or `|`
@@ -708,19 +710,19 @@ You can combine multiple tests using `&` (both conditions are true (AND)) or `|`
 
 
 ``` r
-imdb_score[imdb_score < 62 | imdb_score > 77]
+imdb_rating[imdb_rating < 6 | imdb_rating > 7]
 ```
 
 ``` output
-[1] 21 80
+[1] 7.6 7.7 8.2
 ```
 
 ``` r
-imdb_score[imdb_score >= 62 & imdb_score <= 77]
+imdb_rating[imdb_rating >= 6 & imdb_rating <= 7]
 ```
 
 ``` output
-[1] 62 77
+[1] 6.4
 ```
 
 
@@ -742,11 +744,11 @@ become tedious.
 
 
 ``` r
-title[title == "FTA" | title == "Dostana"] # returns both "FTA and Dostana"
+title[title == "Die Hard" | title == "Home Alone"] # returns both Die Hard and Home Alone
 ```
 
 ``` output
-[1] "FTA"     "Dostana"
+[1] "Home Alone" "Die Hard"  
 ```
 
 The function `%in%` allows you to test if any of the elements of a search vector
@@ -754,11 +756,11 @@ The function `%in%` allows you to test if any of the elements of a search vector
 
 
 ``` r
-title %in% c("FTA", "Dostana")
+title %in% c("Die Hard", "Home Alone")
 ```
 
 ``` output
-[1]  TRUE  TRUE FALSE FALSE
+[1] FALSE  TRUE FALSE  TRUE
 ```
 
 Note that the output is the same length as the search vector on the left hand
@@ -768,11 +770,11 @@ in the search vector that appear in your target vector:
 
 
 ``` r
-title[title %in% c("FTA", "Dostana")]
+title[title %in% c("Die Hard", "Home Alone")]
 ```
 
 ``` output
-[1] "FTA"     "Dostana"
+[1] "Home Alone" "Die Hard"  
 ```
 
 You can also use a vector with `TRUE` and `FALSE` based on one vector to find 
@@ -781,11 +783,11 @@ movies "FTA" and "Dostana" we can do it like this.
 
 
 ``` r
-imdb_score[title %in% c("FTA", "Dostana")]
+imdb_score[title %in% c("Die Hard", "Home Alone")]
 ```
 
-``` output
-[1] 62 21
+``` error
+Error: object 'imdb_score' not found
 ```
 
 
@@ -804,9 +806,9 @@ the missing values.
 
 ``` r
 #Makes an new vector with NA values
-imdb_score_na <- c(imdb_score, NA, 54, NA)
+imdb_rating_na <- c(imdb_rating, NA, 8, NA)
 #tries to calculate mean - without ignoring NA values
-mean(imdb_score_na)
+mean(imdb_rating_na)
 ```
 
 ``` output
@@ -815,7 +817,7 @@ mean(imdb_score_na)
 
 ``` r
 #tries to find the maximum value - without ignoring NA values
-max(imdb_score_na)
+max(imdb_rating_na)
 ```
 
 ``` output
@@ -824,20 +826,20 @@ max(imdb_score_na)
 
 ``` r
 #tries to calculate mean - telling R to ignore NA values
-mean(imdb_score_na, na.rm = TRUE)
+mean(imdb_rating_na, na.rm = TRUE)
 ```
 
 ``` output
-[1] 58.8
+[1] 7.58
 ```
 
 ``` r
 #tries to find the maximum value - telling R to ignore NA values
-max(imdb_score_na, na.rm = TRUE)
+max(imdb_rating_na, na.rm = TRUE)
 ```
 
 ``` output
-[1] 80
+[1] 8.2
 ```
 
 If your data include missing values, you may want to become familiar with the
@@ -848,16 +850,16 @@ examples.
 
 ``` r
 ## Extract those elements which are not missing values.
-imdb_score_na[!is.na(imdb_score_na)]
+imdb_rating_na[!is.na(imdb_rating_na)]
 ```
 
 ``` output
-[1] 62 21 77 80 54
+[1] 7.6 7.7 6.4 8.2 8.0
 ```
 
 ``` r
 ## Count the number of missing values.
-sum(is.na(imdb_score_na))
+sum(is.na(imdb_rating_na))
 ```
 
 ``` output
@@ -866,11 +868,11 @@ sum(is.na(imdb_score_na))
 
 ``` r
 ## Returns the object with incomplete cases removed. The returned object is an atomic vector of type `"numeric"` (or `"double"`).
-na.omit(imdb_score_na)
+na.omit(imdb_rating_na)
 ```
 
 ``` output
-[1] 62 21 77 80 54
+[1] 7.6 7.7 6.4 8.2 8.0
 attr(,"na.action")
 [1] 5 7
 attr(,"class")
@@ -879,15 +881,15 @@ attr(,"class")
 
 ``` r
 ## Extract those elements which are complete cases. The returned object is an atomic vector of type `"numeric"` (or `"double"`).
-imdb_score_na[complete.cases(imdb_score_na)]
+imdb_rating_na[complete.cases(imdb_rating_na)]
 ```
 
 ``` output
-[1] 62 21 77 80 54
+[1] 7.6 7.7 6.4 8.2 8.0
 ```
 Recall that you can use the `typeof()` function to find the type of your atomic vector.
 
-::::::::::::::::::::::::::::::::::::: challenge 
+<!-- ::::::::::::::::::::::::::::::::::::: challenge 
 
 ## Exercise
 
@@ -928,7 +930,7 @@ length(rooms_above_2)
 ```
 
 :::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::
+:::::::::::::::::::::::::::::::::::::::::::::::: -->
 
 
 ## Data frames
@@ -941,16 +943,16 @@ to a dataframe.
 
 
 ``` r
-df <- data.frame(title, imdb_score, production_country)
+df <- data.frame(title, imdb_rating, genre_1)
 df
 ```
 
 ``` output
-          title imdb_score production_country
-1           FTA         62                 US
-2       Dostana         21                 IN
-3   Deliverance         77                 US
-4 Life of Brian         80                 GB
+          title imdb_rating   genre_1
+1 Love Actually         7.6    Comedy
+2    Home Alone         7.7    Comedy
+3    The Grinch         6.4 Animation
+4      Die Hard         8.2    Action
 ```
 
 So it is possible to make an data frame directly in R, but most of the time 

@@ -38,7 +38,7 @@ To make it easier to interact with R, we will use RStudio. To function correctly
 RStudio needs R and therefore both need to be installed on your computer.
 
 
-## Why learn R 🤶?
+## Why learn R? 🤶
 
 There are numerous reasons to learn and use R. In the following we will point 
 out a few of them.
@@ -89,7 +89,7 @@ R is designed for data analysis. It comes with special data structures and data
 types that make handling of missing data and statistical factors convenient.
 
 R can connect to spreadsheets, databases, and many other data formats, on your
-computer or on the web 🎅.
+computer or on the web. 🎅
 
 ### R produces high-quality graphics
 
@@ -117,10 +117,10 @@ freely available to extend R's native capabilities.
 
 
 
-<img src="./fig/r-manual.jpeg" alt="RStudio extends what R can do, and makes it easier to write R code and interact with R." width="100%" style="display: block; margin: auto;" />
+<img src="fig/r-manual-christmas.png" alt="RStudio extends what R can do, and makes it easier to write R code and interact with R." width="100%" style="display: block; margin: auto;" />
 
 
-<img src="./fig/r-automatic.jpeg" alt="automatic car gear shift representing the ease of RStudio" width="100%" style="display: block; margin: auto;" />
+<img src="fig/r-automatic-christmas.jpg" alt="automatic car gear shift representing the ease of RStudio" width="100%" style="display: block; margin: auto;" />
 
 RStudio extends what R can do, and makes it easier to write R code and interact
 with R. <a href="https://unsplash.com/photos/D19rXKDUPYM">Left photo credit</a>; <a href="https://unsplash.com/photos/Wec3M4dY_LE">Right photo credit</a>.
@@ -266,14 +266,14 @@ dir.create("data_output")
 dir.create("fig_output")
 ```
 
-Begin by downloading the dataset called ["`movieSerie.csv`"](/data/movieSerie.csv). 
+Begin by downloading the dataset called ["`xmas_movies.csv`"](/data/xmas_movies.csv). 
 Place this downloaded file in the `data/` you just created. You can do this directly 
 from R by copying and pasting this in your terminal (your instructor can place this chunk of code in
 the Etherpad):
 
 
 ``` r
-download.file("https://raw.githubusercontent.com/KUBDatalab/R-intro/main/episodes/data/movieSerie.csv", "data/movieSerie.csv", mode = "wb")
+download.file("https://raw.githubusercontent.com/KUBDatalab/R-intro-christmas/main/episodes/data/xmas_movies.csv", "data/xmas_movies.csv", mode = "wb")
 ```
 
 
@@ -307,7 +307,7 @@ selected text will be sent to the console and executed when you press
 <kbd>Ctrl</kbd> + <kbd>Enter</kbd>. If there is information in the console
 you do not need anymore, you can clear it with <kbd>Ctrl</kbd> + <kbd>L</kbd>.
 You can find other keyboard shortcuts in this
-[RStudio cheatsheet about the RStudio IDE](https://github.com/rstudio/cheatsheets/raw/master/rstudio-ide.pdf).
+[RStudio cheatsheet about the RStudio IDE](https://posit.co/wp-content/uploads/2022/10/rstudio-ide-1.pdf).
 
 At some point in your analysis, you may want to check the content of a variable
 or the structure of an object without necessarily keeping a record of it in
