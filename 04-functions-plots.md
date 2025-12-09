@@ -54,11 +54,15 @@ of the x-axis and one containing the values for the y-axis. Here we use the $-no
 
 
 ``` r
-plot(movieSerie_plotting$release_year, movieSerie_plotting$imdb_score)
+plot(xmas_movies_plotting$release_year, xmas_movies_plotting$imdb_rating)
+```
+
+``` warning
+Warning: Unknown or uninitialised column: `release_year`.
 ```
 
 ``` error
-Error: object 'movieSerie_plotting' not found
+Error in xy.coords(x, y, xlabel, ylabel, log): 'x' and 'y' lengths differ
 ```
 
 Scatterplots are useful for showing that sort for relationships in the data.
@@ -67,14 +71,18 @@ Here it does not appear that the correlation exists; there is no clear trend.
 We might want to adjust the labels on the axes, and add a main title:
 
 ``` r
-plot(movieSerie_plotting$release_year, movieSerie_plotting$imdb_score, 
-     main = "Relation between release date and their imdb_score",
+plot(xmas_movies_plotting$release_year, xmas_movies_plotting$imdb_rating, 
+     main = "Relation between release date and their imdb_rating",
      xlab = "Release year",
-     ylab = "imdb score")
+     ylab = "imdb rating")
+```
+
+``` warning
+Warning: Unknown or uninitialised column: `release_year`.
 ```
 
 ``` error
-Error: object 'movieSerie_plotting' not found
+Error in xy.coords(x, y, xlabel, ylabel, log): 'x' and 'y' lengths differ
 ```
 
 
@@ -82,12 +90,10 @@ Error: object 'movieSerie_plotting' not found
 We can use boxplots to visualize the distribution of number of imdb_score for genre:
 
 ``` r
-boxplot(movieSerie_plotting$imdb_score~movieSerie_plotting$genre)
+boxplot(xmas_movies_plotting$imdb_rating~xmas_movies_plotting$genre_1)
 ```
 
-``` error
-Error in eval(predvars, data, env): object 'movieSerie_plotting' not found
-```
+<img src="fig/04-functions-plots-rendered-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
 Two new things happens here. First, we are using a new way of telling the 
 plot function what relationship we want to visualise. 
 The function notation y~x, tells the boxplot function that we want to visualise
@@ -112,12 +118,10 @@ outliers are either very interesting, or something that we can ignore.
 Another useful plottype are histograms. 
 
 ``` r
-hist(movieSerie_plotting$runtime)
+hist(xmas_movies_plotting$runtime)
 ```
 
-``` error
-Error: object 'movieSerie_plotting' not found
-```
+<img src="fig/04-functions-plots-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
 
 Histograms counts the number of observations in our data, that lies between 
 two values. Here the "breaks" between the values on the x-axis corresponds
@@ -282,7 +286,7 @@ as.numeric(for_time)/as.numeric(vect_time)
 ```
 
 ``` output
-[1] 6.540154
+[1] 6.707653
 ```
 More than double as fast!
 To be fair most of the time is spent outputting the results, but as a general
