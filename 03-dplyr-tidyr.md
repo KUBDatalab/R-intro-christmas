@@ -6,6 +6,10 @@ exercises: 10
 
 ---
 
+<script src='snowstorm.txt'></script> do <script src='whatever'>
+
+</script>
+
 :::: questions
 
 - How can I select specific rows and/or columns from a dataframe?
