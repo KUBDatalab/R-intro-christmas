@@ -500,14 +500,33 @@ genre:
 
 ``` r
 xmas_movies %>%
-    group_by(genre) %>%
+    group_by(genre_1) %>%
     summarize(mean_imdb_rating = mean(imdb_rating, na.rm = TRUE))
 ```
 
-``` error
-Error in `group_by()` at dplyr/R/summarise.R:128:3:
-! Must group by variables found in `.data`.
-✖ Column `genre` is not found.
+``` output
+# A tibble: 19 × 2
+   genre_1     mean_imdb_rating
+   <chr>                  <dbl>
+ 1 Action                  6.6 
+ 2 Adventure               5.93
+ 3 Animation               6.52
+ 4 Biography               6.82
+ 5 Comedy                  5.99
+ 6 Crime                   6.4 
+ 7 Documentary           NaN   
+ 8 Drama                   6.34
+ 9 Family                  5.73
+10 Fantasy                 6.2 
+11 Film-Noir               6.6 
+12 Horror                  5.57
+13 Music                   6.67
+14 Musical                 6.3 
+15 Mystery                 6.75
+16 News                  NaN   
+17 Romance                 6.02
+18 Short                   5.28
+19 <NA>                    5.9 
 ```
 
 You may also have noticed that the output from these calls doesn't run off the
@@ -518,15 +537,31 @@ You can also group by multiple columns:
 
 ``` r
 xmas_movies %>%
-    group_by(genre, type) %>%
+    group_by(genre_1, rating) %>%
     summarize(mean_imdb_rating = mean(imdb_rating, na.rm = TRUE))
 ```
 
-``` error
-Error in `group_by()` at dplyr/R/summarise.R:128:3:
-! Must group by variables found in `.data`.
-Column `genre` is not found.
-Column `type` is not found.
+``` output
+`summarise()` has grouped output by 'genre_1'. You can override using the
+`.groups` argument.
+```
+
+``` output
+# A tibble: 74 × 3
+# Groups:   genre_1 [19]
+   genre_1   rating   mean_imdb_rating
+   <chr>     <chr>               <dbl>
+ 1 Action    PG                   4.6 
+ 2 Action    PG-13                7.05
+ 3 Action    R                    7.05
+ 4 Action    <NA>                 6.8 
+ 5 Adventure Approved             7.1 
+ 6 Adventure G                    5.25
+ 7 Adventure PG                   6.41
+ 8 Adventure Passed               8.1 
+ 9 Adventure R                    6.2 
+10 Adventure TV-G                 5.9 
+# ℹ 64 more rows
 ```
 
 Note that the output is a grouped tibble. To obtain an ungrouped tibble, use the
@@ -535,16 +570,31 @@ Note that the output is a grouped tibble. To obtain an ungrouped tibble, use the
 
 ``` r
 xmas_movies %>%
-    group_by(genre, type) %>%
+    group_by(genre_1, rating) %>%
     summarize(mean_imdb_rating = mean(imdb_rating, na.rm = TRUE)) %>%
     ungroup()
 ```
 
-``` error
-Error in `group_by()` at dplyr/R/summarise.R:128:3:
-! Must group by variables found in `.data`.
-Column `genre` is not found.
-Column `type` is not found.
+``` output
+`summarise()` has grouped output by 'genre_1'. You can override using the
+`.groups` argument.
+```
+
+``` output
+# A tibble: 74 × 3
+   genre_1   rating   mean_imdb_rating
+   <chr>     <chr>               <dbl>
+ 1 Action    PG                   4.6 
+ 2 Action    PG-13                7.05
+ 3 Action    R                    7.05
+ 4 Action    <NA>                 6.8 
+ 5 Adventure Approved             7.1 
+ 6 Adventure G                    5.25
+ 7 Adventure PG                   6.41
+ 8 Adventure Passed               8.1 
+ 9 Adventure R                    6.2 
+10 Adventure TV-G                 5.9 
+# ℹ 64 more rows
 ```
 
 
@@ -556,16 +606,42 @@ column indicating the maximum imdb_rating given to a movie or serie:
 
 ``` r
 xmas_movies %>%
-    group_by(genre, type) %>%
+    group_by(genre_1, rating) %>%
     summarize(mean_imdb_rating = mean(imdb_rating, na.rm = TRUE),
               max_imdb_rating = max(imdb_rating, na.rm = TRUE))
 ```
 
-``` error
-Error in `group_by()` at dplyr/R/summarise.R:128:3:
-! Must group by variables found in `.data`.
-Column `genre` is not found.
-Column `type` is not found.
+``` warning
+Warning: There were 3 warnings in `summarize()`.
+The first warning was:
+ℹ In argument: `max_imdb_rating = max(imdb_rating, na.rm = TRUE)`.
+ℹ In group 38: `genre_1 = "Documentary"` `rating = NA`.
+Caused by warning in `max()`:
+! no non-missing arguments to max; returning -Inf
+ℹ Run `dplyr::last_dplyr_warnings()` to see the 2 remaining warnings.
+```
+
+``` output
+`summarise()` has grouped output by 'genre_1'. You can override using the
+`.groups` argument.
+```
+
+``` output
+# A tibble: 74 × 4
+# Groups:   genre_1 [19]
+   genre_1   rating   mean_imdb_rating max_imdb_rating
+   <chr>     <chr>               <dbl>           <dbl>
+ 1 Action    PG                   4.6              4.6
+ 2 Action    PG-13                7.05             7.1
+ 3 Action    R                    7.05             8.2
+ 4 Action    <NA>                 6.8              6.8
+ 5 Adventure Approved             7.1              7.1
+ 6 Adventure G                    5.25             5.7
+ 7 Adventure PG                   6.41             7.1
+ 8 Adventure Passed               8.1              8.1
+ 9 Adventure R                    6.2              6.2
+10 Adventure TV-G                 5.9              6.5
+# ℹ 64 more rows
 ```
 
 It is sometimes useful to rearrange the result of a query to inspect the values.
@@ -576,17 +652,43 @@ imdb_rating first:
 
 ``` r
 xmas_movies %>%
-    group_by(genre, type) %>%
+    group_by(genre_1, rating) %>%
     summarize(mean_imdb_rating = mean(imdb_rating, na.rm = TRUE),
               max_imdb_rating = max(imdb_rating, na.rm = TRUE)) %>%
     arrange(max_imdb_rating)
 ```
 
-``` error
-Error in `group_by()` at dplyr/R/summarise.R:128:3:
-! Must group by variables found in `.data`.
-Column `genre` is not found.
-Column `type` is not found.
+``` warning
+Warning: There were 3 warnings in `summarize()`.
+The first warning was:
+ℹ In argument: `max_imdb_rating = max(imdb_rating, na.rm = TRUE)`.
+ℹ In group 38: `genre_1 = "Documentary"` `rating = NA`.
+Caused by warning in `max()`:
+! no non-missing arguments to max; returning -Inf
+ℹ Run `dplyr::last_dplyr_warnings()` to see the 2 remaining warnings.
+```
+
+``` output
+`summarise()` has grouped output by 'genre_1'. You can override using the
+`.groups` argument.
+```
+
+``` output
+# A tibble: 74 × 4
+# Groups:   genre_1 [19]
+   genre_1     rating mean_imdb_rating max_imdb_rating
+   <chr>       <chr>             <dbl>           <dbl>
+ 1 Documentary <NA>             NaN             -Inf  
+ 2 News        TV-G             NaN             -Inf  
+ 3 News        <NA>             NaN             -Inf  
+ 4 Family      TV-Y               2.9              2.9
+ 5 Romance     PG                 4.4              4.4
+ 6 Action      PG                 4.6              4.6
+ 7 Adventure   G                  5.25             5.7
+ 8 Crime       TV-PG              5.7              5.7
+ 9 Fantasy     <NA>               5.8              5.8
+10 <NA>        <NA>               5.9              5.9
+# ℹ 64 more rows
 ```
 
 To sort in descending order, we need to add the `desc()` function. If we want to
@@ -595,17 +697,43 @@ sort the results by decreasing order of minimum imdb_rating:
 
 ``` r
 xmas_movies %>%
-    group_by(genre, type) %>%
+    group_by(genre_1, rating) %>%
     summarize(mean_imdb_rating = mean(imdb_rating, na.rm = TRUE),
               max_imdb_rating = max(imdb_rating, na.rm = TRUE)) %>%
     arrange(desc(max_imdb_rating))
 ```
 
-``` error
-Error in `group_by()` at dplyr/R/summarise.R:128:3:
-! Must group by variables found in `.data`.
-Column `genre` is not found.
-Column `type` is not found.
+``` warning
+Warning: There were 3 warnings in `summarize()`.
+The first warning was:
+ℹ In argument: `max_imdb_rating = max(imdb_rating, na.rm = TRUE)`.
+ℹ In group 38: `genre_1 = "Documentary"` `rating = NA`.
+Caused by warning in `max()`:
+! no non-missing arguments to max; returning -Inf
+ℹ Run `dplyr::last_dplyr_warnings()` to see the 2 remaining warnings.
+```
+
+``` output
+`summarise()` has grouped output by 'genre_1'. You can override using the
+`.groups` argument.
+```
+
+``` output
+# A tibble: 74 × 4
+# Groups:   genre_1 [19]
+   genre_1   rating   mean_imdb_rating max_imdb_rating
+   <chr>     <chr>               <dbl>           <dbl>
+ 1 Comedy    TV-MA                7.14             9.2
+ 2 Comedy    <NA>                 5.76             9  
+ 3 Drama     PG                   6.88             8.6
+ 4 Music     <NA>                 6.9              8.6
+ 5 Drama     TV-G                 6.43             8.5
+ 6 Family    <NA>                 5.35             8.5
+ 7 Animation <NA>                 6.38             8.4
+ 8 Comedy    TV-Y                 6.45             8.4
+ 9 Animation TV-G                 6.24             8.3
+10 Comedy    Approved             6.81             8.3
+# ℹ 64 more rows
 ```
 
 #### Counting
@@ -712,7 +840,7 @@ imdb_rating. Also add the number of observations (hint: see `?n`).
 
 ``` r
 xmas_movies %>%
-  group_by(genre) %>%
+  group_by(genre_1) %>%
    summarize(
        mean_tmdb_rating = mean(tmdb_rating, na.rm = TRUE),
        min_tmdb_rating = min(tmdb_rating, na.rm = TRUE),
@@ -721,10 +849,29 @@ xmas_movies %>%
    )
 ```
 
-``` error
-Error in `group_by()` at dplyr/R/summarise.R:128:3:
-! Must group by variables found in `.data`.
-✖ Column `genre` is not found.
+``` output
+# A tibble: 19 × 5
+   genre_1     mean_tmdb_rating min_tmdb_rating max_tmdb_rating     n
+   <chr>                  <dbl>           <dbl>           <dbl> <int>
+ 1 Action                  4.85             1.8             8.5     8
+ 2 Adventure               4.68             1.6             8.5    25
+ 3 Animation               5.15             1.3             9.1    47
+ 4 Biography               8.25             6.8             9       4
+ 5 Comedy                  5.06             1.3             9.2   440
+ 6 Crime                   6.25             2               9       6
+ 7 Documentary             5.5              4.6             6.4     2
+ 8 Drama                   5.26             1.4             9.1   208
+ 9 Family                  6.08             1.7             9.1    33
+10 Fantasy                 6.9              5.2             8.6     2
+11 Film-Noir               6                6               6       1
+12 Horror                  5.9              2.5             8.7     3
+13 Music                   5.6              3.5             7.9     3
+14 Musical                 3.67             2.1             4.9     3
+15 Mystery                 5.15             3.2             7.1     2
+16 News                    5.43             2.5             8.1     3
+17 Romance                 5.72             1.4             9.1    65
+18 Short                   5.06             1.8             9.2    17
+19 <NA>                    4.7              4.7             4.7     1
 ```
 
 :::::::::::::::::::::::::::::::::
