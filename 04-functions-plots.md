@@ -32,15 +32,14 @@ xmas_movies_plotting <- read_csv("data/xmas_movies.csv", na = c("NA", "NULL"))
 ```
 
 ``` output
-New names:
-Rows: 873 Columns: 16
-── Column specification
-──────────────────────────────────────────────────────── Delimiter: "," chr
-(9): title, rating, genre_1, genre_2, genre_3, description, director, st... dbl
-(7): ...1, runtime, imdb_rating, tmdb_rating, meta_score, release_year, ...
-ℹ Use `spec()` to retrieve the full column specification for this data. ℹ
-Specify the column types or set `show_col_types = FALSE` to quiet this message.
-• `` -> `...1`
+Rows: 873 Columns: 15
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (9): title, rating, genre_1, genre_2, genre_3, description, director, st...
+dbl (6): runtime, imdb_rating, tmdb_rating, meta_score, release_year, votes
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ```
 
 
@@ -275,7 +274,7 @@ as.numeric(for_time)/as.numeric(vect_time)
 ```
 
 ``` output
-[1] 4.559126
+[1] 6.70555
 ```
 More than double as fast!
 To be fair most of the time is spent outputting the results, but as a general

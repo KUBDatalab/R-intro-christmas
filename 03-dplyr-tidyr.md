@@ -173,19 +173,19 @@ filter(xmas_movies, rating == "PG-13")
 ```
 
 ``` output
-# A tibble: 24 × 16
-    ...1 title rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
-   <dbl> <chr> <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
- 1     3 Nati… PG-13       97         7.5         7.1         49 Comedy  <NA>   
- 2    13 Scro… PG-13      101         6.9         7.9         38 Comedy  Drama  
- 3    14 Spir… PG-13      127         6.6         3           55 Comedy  Family 
- 4    19 Last… PG-13      103         6.5         4.7         50 Comedy  Drama  
- 5    23 Four… PG-13       88         5.7         3.6         41 Comedy  Drama  
- 6    55 Happ… PG-13      102         6.6         6           69 Comedy  Romance
- 7    62 Shaz… PG-13      132         7           3.4         71 Action  Advent…
- 8    65 Surv… PG-13       91         5.4         3.5         19 Comedy  Romance
- 9    71 Batm… PG-13      126         7.1         7.4         68 Action  Crime  
-10    72 Edwa… PG-13      105         7.9         2.9         74 Drama   Fantasy
+# A tibble: 24 × 15
+   title       rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+   <chr>       <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
+ 1 National L… PG-13       97         7.5         7.1         49 Comedy  <NA>   
+ 2 Scrooged    PG-13      101         6.9         7.9         38 Comedy  Drama  
+ 3 Spirited    PG-13      127         6.6         3           55 Comedy  Family 
+ 4 Last Chris… PG-13      103         6.5         4.7         50 Comedy  Drama  
+ 5 Four Chris… PG-13       88         5.7         3.6         41 Comedy  Drama  
+ 6 Happiest S… PG-13      102         6.6         6           69 Comedy  Romance
+ 7 Shazam!     PG-13      132         7           3.4         71 Action  Advent…
+ 8 Surviving … PG-13       91         5.4         3.5         19 Comedy  Romance
+ 9 Batman Ret… PG-13      126         7.1         7.4         68 Action  Crime  
+10 Edward Sci… PG-13      105         7.9         2.9         74 Drama   Fantasy
 # ℹ 14 more rows
 # ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
 #   director <chr>, stars <chr>, votes <dbl>, gross <chr>
@@ -208,10 +208,10 @@ filter(xmas_movies, rating == "PG-13",
 ```
 
 ``` output
-# A tibble: 1 × 16
-   ...1 title  rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
-  <dbl> <chr>  <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
-1   116 A Cal… PG-13      106         5.8         8.2         NA Comedy  Drama  
+# A tibble: 1 × 15
+  title        rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+  <chr>        <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
+1 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama  
 # ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
 #   director <chr>, stars <chr>, votes <dbl>, gross <chr>
 ```
@@ -228,10 +228,10 @@ filter(xmas_movies, rating == "PG-13" &
 ```
 
 ``` output
-# A tibble: 1 × 16
-   ...1 title  rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
-  <dbl> <chr>  <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
-1   116 A Cal… PG-13      106         5.8         8.2         NA Comedy  Drama  
+# A tibble: 1 × 15
+  title        rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+  <chr>        <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
+1 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama  
 # ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
 #   director <chr>, stars <chr>, votes <dbl>, gross <chr>
 ```
@@ -249,19 +249,19 @@ filter(xmas_movies, rating == "PG-13" |
 ```
 
 ``` output
-# A tibble: 398 × 16
-    ...1 title rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
-   <dbl> <chr> <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
- 1     1 Love… R          135         7.6         4.3         55 Comedy  Drama  
- 2     2 Home… PG         103         7.7         8.8         63 Comedy  Family 
- 3     3 Nati… PG-13       97         7.5         7.1         49 Comedy  <NA>   
- 4     5 How … PG         104         6.3         2.5         46 Comedy  Family 
- 5     7 Die … R          132         8.2         1.8         72 Action  Thrill…
- 6     8 Home… PG         120         6.9         8.1         46 Advent… Comedy 
- 7    10 It's… PG         130         8.6         6.9         89 Drama   Family 
- 8    12 Whit… <NA>       120         7.6         9           56 Comedy  Musical
- 9    13 Scro… PG-13      101         6.9         7.9         38 Comedy  Drama  
-10    14 Spir… PG-13      127         6.6         3           55 Comedy  Family 
+# A tibble: 398 × 15
+   title       rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
+   <chr>       <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
+ 1 Love Actua… R          135         7.6         4.3         55 Comedy  Drama  
+ 2 Home Alone  PG         103         7.7         8.8         63 Comedy  Family 
+ 3 National L… PG-13       97         7.5         7.1         49 Comedy  <NA>   
+ 4 How the Gr… PG         104         6.3         2.5         46 Comedy  Family 
+ 5 Die Hard    R          132         8.2         1.8         72 Action  Thrill…
+ 6 Home Alone… PG         120         6.9         8.1         46 Advent… Comedy 
+ 7 It's a Won… PG         130         8.6         6.9         89 Drama   Family 
+ 8 White Chri… <NA>       120         7.6         9           56 Comedy  Musical
+ 9 Scrooged    PG-13      101         6.9         7.9         38 Comedy  Drama  
+10 Spirited    PG-13      127         6.6         3           55 Comedy  Family 
 # ℹ 388 more rows
 # ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
 #   director <chr>, stars <chr>, votes <dbl>, gross <chr>
