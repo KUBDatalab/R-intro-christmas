@@ -402,7 +402,7 @@ A vector is the most common and basic data type in R, and is pretty much
 the workhorse of R. A vector is composed by a series of values. We can assign a 
 series of values to a vector using the `c()` function. For example we can 
 create a vector containing the score of movies on imdb and assign it to an 
-object `imdb_rating`:
+object `xmas_movies_rating`:
 
 
 ``` r

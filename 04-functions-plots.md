@@ -28,15 +28,15 @@ in a new object
 
 
 ``` r
-movieSerie_plotting <- read_csv("data/movieSerie.csv", na = c("NA", "NULL"))
+xmas_movies_plotting <- read_csv("data/xmas_movies.csv", na = c("NA", "NULL"))
 ```
 
 ``` output
-Rows: 5850 Columns: 14
+Rows: 873 Columns: 14
 ── Column specification ────────────────────────────────────────────────────────
 Delimiter: ","
-chr (7): id, title, type, genre, description, age_certification, imdb_id
-dbl (7): release_year, runtime, seasons, imdb_score, imdb_votes, tmdb_popula...
+chr (9): title, rating, genre_1, genre_2, genre_3, description, director, st...
+dbl (5): runtime, imdb_rating, tmdb_rating, meta_score, votes
 
 ℹ Use `spec()` to retrieve the full column specification for this data.
 ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
@@ -50,15 +50,16 @@ plotting individual observations in a two-dimensional graph, with the position
 in the x,y-plane defined by the values of the two variables.
 
 The default plot function in Base R takes two vectors, one containing the values 
-of the x-axis and one containing the values for the y-axis. Here we use the 
-$-notation:
+of the x-axis and one containing the values for the y-axis. Here we use the $-notation:
 
 
 ``` r
 plot(movieSerie_plotting$release_year, movieSerie_plotting$imdb_score)
 ```
 
-<img src="fig/04-functions-plots-rendered-first-scatterplot-1.png" style="display: block; margin: auto;" />
+``` error
+Error: object 'movieSerie_plotting' not found
+```
 
 Scatterplots are useful for showing that sort for relationships in the data.
 Here it does not appear that the correlation exists; there is no clear trend.
@@ -72,7 +73,9 @@ plot(movieSerie_plotting$release_year, movieSerie_plotting$imdb_score,
      ylab = "imdb score")
 ```
 
-<img src="fig/04-functions-plots-rendered-unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
+``` error
+Error: object 'movieSerie_plotting' not found
+```
 
 
 ## Boxplots 
@@ -82,7 +85,9 @@ We can use boxplots to visualize the distribution of number of imdb_score for ge
 boxplot(movieSerie_plotting$imdb_score~movieSerie_plotting$genre)
 ```
 
-<img src="fig/04-functions-plots-rendered-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
+``` error
+Error in eval(predvars, data, env): object 'movieSerie_plotting' not found
+```
 Two new things happens here. First, we are using a new way of telling the 
 plot function what relationship we want to visualise. 
 The function notation y~x, tells the boxplot function that we want to visualise
@@ -110,7 +115,9 @@ Another useful plottype are histograms.
 hist(movieSerie_plotting$runtime)
 ```
 
-<img src="fig/04-functions-plots-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+``` error
+Error: object 'movieSerie_plotting' not found
+```
 
 Histograms counts the number of observations in our data, that lies between 
 two values. Here the "breaks" between the values on the x-axis corresponds
@@ -275,7 +282,7 @@ as.numeric(for_time)/as.numeric(vect_time)
 ```
 
 ``` output
-[1] 4.621251
+[1] 6.34402
 ```
 More than double as fast!
 To be fair most of the time is spent outputting the results, but as a general
