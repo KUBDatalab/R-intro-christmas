@@ -171,7 +171,7 @@ We can also change an object’s value by assigning it a new one:
 
 
 ``` r
-coal_in_pounds <- 2.00
+coal_in_pounds <- 2.0
 0.45 * coal_in_pounds
 ```
 
