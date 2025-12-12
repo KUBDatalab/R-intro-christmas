@@ -626,15 +626,15 @@ numbers come first, followed by column numbers.</p>
 </h3>
 <pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co">## first element in the 6th column of the tibble </span></span>
-<span><span class="va">xmas_movies</span><span class="op">[</span><span class="fl">1</span>, <span class="fl">6</span><span class="op">]</span></span></code></pre>
+<span><span class="va">xmas_movies</span><span class="op">[</span><span class="fl">1</span>, <span class="fl">16</span><span class="op">]</span></span></code></pre>
 </div>
 <div class="codewrapper">
-<h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+<h3 class="code-label">ERROR<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 1 × 1
-  meta_score
-       &lt;dbl&gt;
-1         55</code></pre>
+<pre class="error" tabindex="0"><code>Error in `xmas_movies[1, 16]`:
+! Can't subset columns past the end.
+ℹ Location 16 doesn't exist.
+ℹ There are only 15 columns.</code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -754,7 +754,7 @@ integers in increasing or decreasing order, test <code>1:10</code> and
 <h3 class="code-label">R<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
 <pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">xmas_movies</span><span class="op">[</span><span class="op">-</span><span class="fu">c</span><span class="op">(</span><span class="fl">7</span><span class="op">:</span><span class="fl">131</span><span class="op">)</span>, <span class="op">]</span>   <span class="co"># Equivalent to head(interviews)</span></span></code></pre>
+<code class="sourceCode R"><span><span class="va">xmas_movies</span><span class="op">[</span><span class="op">-</span><span class="fu">c</span><span class="op">(</span><span class="fl">7</span><span class="op">:</span><span class="fl">131</span><span class="op">)</span>, <span class="op">]</span>   <span class="co"># Equivalent to head(xmas_movies)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -839,8 +839,8 @@ is a bit trickier than dividing n_rows by 2. Use the median( ) function
 and what you’ve learned about sequences in R to extract the middle
 row!</p>
 <ol start="4" style="list-style-type: decimal"><li>Combine <code>nrow()</code> with the <code>-</code> notation above
-to reproduce the behavior of <code>head(interviews)</code>, keeping just
-the first through 6th rows of the interviews dataset.</li>
+to reproduce the behavior of <code>head(xmas_movies)</code>, keeping
+just the first through 6th rows of the interviews dataset.</li>
 </ol></div>
 </div>
 </div>

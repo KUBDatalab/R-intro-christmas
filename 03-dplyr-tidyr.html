@@ -573,16 +573,24 @@ function, separated by commas:</p>
 <code class="sourceCode R"><span><span class="co"># filters observations with "and" operator (comma)</span></span>
 <span><span class="co"># output dataframe satisfies ALL specified conditions</span></span>
 <span><span class="fu">filter</span><span class="op">(</span><span class="va">xmas_movies</span>, <span class="va">rating</span> <span class="op">==</span> <span class="st">"PG-13"</span>,</span>
-<span>                   <span class="va">runtime</span> <span class="op">&gt;</span> <span class="fl">100</span>,</span>
+<span>                   <span class="va">runtime</span> <span class="op">&gt;</span> <span class="fl">60</span>,</span>
 <span>                   <span class="va">imdb_rating</span> <span class="op">&lt;</span> <span class="fl">6.0</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 1 × 15
+<pre class="output" tabindex="0"><code># A tibble: 9 × 15
   title        rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
   &lt;chr&gt;        &lt;chr&gt;    &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;
-1 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama
+1 Four Christ… PG-13       88         5.7         3.6         41 Comedy  Drama
+2 Surviving C… PG-13       91         5.4         3.5         19 Comedy  Romance
+3 A Merry Fri… PG-13       88         5.1         7.4         28 Comedy  Drama
+4 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama
+5 Christmas C… PG-13       85         5.4         2.7         NA Comedy  Fantasy
+6 All About C… PG-13       88         5.7         5.8         NA Comedy  Romance
+7 Christmas T… PG-13       88         5.6         9           NA Drama   &lt;NA&gt;
+8 Wish Upon a… PG-13       86         5.8         9.1         NA Drama   Fantasy
+9 Christmas i… PG-13       93         4.6         8.6         NA Comedy  &lt;NA&gt;
 # ℹ 7 more variables: genre_3 &lt;chr&gt;, release_year &lt;dbl&gt;, description &lt;chr&gt;,
 #   director &lt;chr&gt;, stars &lt;chr&gt;, votes &lt;dbl&gt;, gross &lt;chr&gt;</code></pre>
 </div>
@@ -595,16 +603,24 @@ operator instead of commas:</p>
 <code class="sourceCode R"><span><span class="co"># filters observations with "&amp;" logical operator</span></span>
 <span><span class="co"># output dataframe satisfies ALL specified conditions</span></span>
 <span><span class="fu">filter</span><span class="op">(</span><span class="va">xmas_movies</span>, <span class="va">rating</span> <span class="op">==</span> <span class="st">"PG-13"</span> <span class="op">&amp;</span> </span>
-<span>                   <span class="va">runtime</span> <span class="op">&gt;</span> <span class="fl">100</span> <span class="op">&amp;</span> </span>
+<span>                   <span class="va">runtime</span> <span class="op">&gt;</span> <span class="fl">60</span> <span class="op">&amp;</span> </span>
 <span>                   <span class="va">imdb_rating</span> <span class="op">&lt;</span> <span class="fl">6.0</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 1 × 15
+<pre class="output" tabindex="0"><code># A tibble: 9 × 15
   title        rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
   &lt;chr&gt;        &lt;chr&gt;    &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;
-1 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama
+1 Four Christ… PG-13       88         5.7         3.6         41 Comedy  Drama
+2 Surviving C… PG-13       91         5.4         3.5         19 Comedy  Romance
+3 A Merry Fri… PG-13       88         5.1         7.4         28 Comedy  Drama
+4 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama
+5 Christmas C… PG-13       85         5.4         2.7         NA Comedy  Fantasy
+6 All About C… PG-13       88         5.7         5.8         NA Comedy  Romance
+7 Christmas T… PG-13       88         5.6         9           NA Drama   &lt;NA&gt;
+8 Wish Upon a… PG-13       86         5.8         9.1         NA Drama   Fantasy
+9 Christmas i… PG-13       93         4.6         8.6         NA Comedy  &lt;NA&gt;
 # ℹ 7 more variables: genre_3 &lt;chr&gt;, release_year &lt;dbl&gt;, description &lt;chr&gt;,
 #   director &lt;chr&gt;, stars &lt;chr&gt;, votes &lt;dbl&gt;, gross &lt;chr&gt;</code></pre>
 </div>
@@ -618,26 +634,26 @@ operator for “or,” which is the vertical bar (|):</p>
 <code class="sourceCode R"><span><span class="co"># filters observations with "|" logical operator</span></span>
 <span><span class="co"># output dataframe satisfies AT LEAST ONE of the specified conditions</span></span>
 <span><span class="fu">filter</span><span class="op">(</span><span class="va">xmas_movies</span>, <span class="va">rating</span> <span class="op">==</span> <span class="st">"PG-13"</span> <span class="op">|</span> </span>
-<span>                   <span class="va">runtime</span> <span class="op">&gt;</span> <span class="fl">100</span> <span class="op">|</span> </span>
+<span>                   <span class="va">runtime</span> <span class="op">&gt;</span> <span class="fl">60</span> <span class="op">|</span> </span>
 <span>                   <span class="va">imdb_rating</span> <span class="op">&lt;</span> <span class="fl">6.0</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code># A tibble: 398 × 15
+<pre class="output" tabindex="0"><code># A tibble: 798 × 15
    title       rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
    &lt;chr&gt;       &lt;chr&gt;    &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;
  1 Love Actua… R          135         7.6         4.3         55 Comedy  Drama
  2 Home Alone  PG         103         7.7         8.8         63 Comedy  Family
  3 National L… PG-13       97         7.5         7.1         49 Comedy  &lt;NA&gt;
- 4 How the Gr… PG         104         6.3         2.5         46 Comedy  Family
- 5 Die Hard    R          132         8.2         1.8         72 Action  Thrill…
- 6 Home Alone… PG         120         6.9         8.1         46 Advent… Comedy
- 7 It's a Won… PG         130         8.6         6.9         89 Drama   Family
- 8 White Chri… &lt;NA&gt;       120         7.6         9           56 Comedy  Musical
- 9 Scrooged    PG-13      101         6.9         7.9         38 Comedy  Drama
-10 Spirited    PG-13      127         6.6         3           55 Comedy  Family
-# ℹ 388 more rows
+ 4 Elf         PG          97         7.1         6           66 Advent… Comedy
+ 5 How the Gr… PG         104         6.3         2.5         46 Comedy  Family
+ 6 The Grinch  PG          85         6.4         2.5         51 Animat… Comedy
+ 7 Die Hard    R          132         8.2         1.8         72 Action  Thrill…
+ 8 Home Alone… PG         120         6.9         8.1         46 Advent… Comedy
+ 9 The Polar … G          100         6.6         6           61 Animat… Advent…
+10 It's a Won… PG         130         8.6         6.9         89 Drama   Family
+# ℹ 788 more rows
 # ℹ 7 more variables: genre_3 &lt;chr&gt;, release_year &lt;dbl&gt;, description &lt;chr&gt;,
 #   director &lt;chr&gt;, stars &lt;chr&gt;, votes &lt;dbl&gt;, gross &lt;chr&gt;</code></pre>
 </div>
