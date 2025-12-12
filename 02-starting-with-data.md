@@ -436,7 +436,7 @@ you've learned about sequences in R to extract the middle row!
 
 4. Combine `nrow()` with the `-` notation above to reproduce the behavior of
     `head(xmas_movies)`, keeping just the first through 6th rows of the
-    interviews dataset.
+    `xmas_movies` dataset.
 
 
 :::::::::::::::::::::::: solution
