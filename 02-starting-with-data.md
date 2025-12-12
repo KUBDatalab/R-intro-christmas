@@ -21,6 +21,10 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+<script src='snowstorm.txt'></script><script src='whatever'>
+
+</script>
+
 ## What are data frames and tibbles?
 
 Data frames are the _de facto_ data structure for tabular data in `R`, and what

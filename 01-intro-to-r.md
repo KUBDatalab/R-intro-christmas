@@ -30,6 +30,10 @@ exercises: 10
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
 
+<script src='snowstorm.txt'></script><script src='whatever'>
+
+</script>
+
 ## Creating objects in R
 
 You can get output from R simply by typing math in the console:
@@ -655,13 +659,13 @@ original one:
 
 
 ``` r
-more_titles <- title[c(1, 2, 3, 2, 1, 3)]
+more_titles <- title[c(4, 1, 2, 3, 2, 1, 3)]
 more_titles
 ```
 
 ``` output
-[1] "Love Actually" "Home Alone"    "The Grinch"    "Home Alone"   
-[5] "Love Actually" "The Grinch"   
+[1] "Die Hard"      "Love Actually" "Home Alone"    "The Grinch"   
+[5] "Home Alone"    "Love Actually" "The Grinch"   
 ```
 
 Here we create an new vector `more_titles` containing the elements from title in 

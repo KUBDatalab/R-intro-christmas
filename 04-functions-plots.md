@@ -21,6 +21,10 @@ exercises: 35
 
 ::::
 
+<script src='snowstorm.txt'></script><script src='whatever'>
+
+</script>
+
 
 
 In case you have made changes to the original object we made. We read in the data
@@ -274,7 +278,7 @@ as.numeric(for_time)/as.numeric(vect_time)
 ```
 
 ``` output
-[1] 6.625722
+[1] 6.875601
 ```
 More than double as fast!
 To be fair most of the time is spent outputting the results, but as a general

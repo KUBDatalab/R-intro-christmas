@@ -6,7 +6,7 @@ exercises: 10
 
 ---
 
-<script src='snowstorm.txt'></script> do <script src='whatever'>
+<script src='snowstorm.txt'></script><script src='whatever'>
 
 </script>
 
