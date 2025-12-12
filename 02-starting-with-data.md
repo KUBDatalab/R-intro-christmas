@@ -253,14 +253,14 @@ xmas_movies[1, 1]
 
 ``` r
 ## first element in the 6th column of the tibble 
-xmas_movies[1, 6]
+xmas_movies[1, 16]
 ```
 
-``` output
-# A tibble: 1 × 1
-  meta_score
-       <dbl>
-1         55
+``` error
+Error in `xmas_movies[1, 16]`:
+! Can't subset columns past the end.
+ℹ Location 16 doesn't exist.
+ℹ There are only 15 columns.
 ```
 
 ``` r
@@ -362,7 +362,7 @@ xmas_movies[, -1]          # The whole tibble, except the first column
 ```
 
 ``` r
-xmas_movies[-c(7:131), ]   # Equivalent to head(interviews)
+xmas_movies[-c(7:131), ]   # Equivalent to head(xmas_movies)
 ```
 
 ``` output
@@ -435,7 +435,7 @@ bit trickier than dividing n_rows by 2. Use the median( ) function and what
 you've learned about sequences in R to extract the middle row!
 
 4. Combine `nrow()` with the `-` notation above to reproduce the behavior of
-    `head(interviews)`, keeping just the first through 6th rows of the
+    `head(xmas_movies)`, keeping just the first through 6th rows of the
     interviews dataset.
 
 

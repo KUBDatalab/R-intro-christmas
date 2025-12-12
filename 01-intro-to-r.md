@@ -693,20 +693,20 @@ imdb_scores above 5:
 
 
 ``` r
-imdb_rating > 5    # will return logicals with TRUE for the indices that meet the condition
+imdb_rating > 6.4    # will return logicals with TRUE for the indices that meet the condition
 ```
 
 ``` output
-[1] TRUE TRUE TRUE TRUE
+[1]  TRUE  TRUE FALSE  TRUE
 ```
 
 ``` r
-## so we can use this to select only the values above 5
-imdb_rating[imdb_rating > 5]
+## so we can use this to select only the values above 6.4
+imdb_rating[imdb_rating > 6.4]
 ```
 
 ``` output
-[1] 7.6 7.7 6.4 8.2
+[1] 7.6 7.7 8.2
 ```
 
 You can combine multiple tests using `&` (both conditions are true (AND)) or `|`

@@ -203,15 +203,23 @@ commas:
 # filters observations with "and" operator (comma)
 # output dataframe satisfies ALL specified conditions
 filter(xmas_movies, rating == "PG-13",
-                   runtime > 100,
+                   runtime > 60,
                    imdb_rating < 6.0)
 ```
 
 ``` output
-# A tibble: 1 × 15
+# A tibble: 9 × 15
   title        rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
   <chr>        <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
-1 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama  
+1 Four Christ… PG-13       88         5.7         3.6         41 Comedy  Drama  
+2 Surviving C… PG-13       91         5.4         3.5         19 Comedy  Romance
+3 A Merry Fri… PG-13       88         5.1         7.4         28 Comedy  Drama  
+4 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama  
+5 Christmas C… PG-13       85         5.4         2.7         NA Comedy  Fantasy
+6 All About C… PG-13       88         5.7         5.8         NA Comedy  Romance
+7 Christmas T… PG-13       88         5.6         9           NA Drama   <NA>   
+8 Wish Upon a… PG-13       86         5.8         9.1         NA Drama   Fantasy
+9 Christmas i… PG-13       93         4.6         8.6         NA Comedy  <NA>   
 # ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
 #   director <chr>, stars <chr>, votes <dbl>, gross <chr>
 ```
@@ -223,15 +231,23 @@ We can also form "and" statements with the `&` operator instead of commas:
 # filters observations with "&" logical operator
 # output dataframe satisfies ALL specified conditions
 filter(xmas_movies, rating == "PG-13" & 
-                   runtime > 100 & 
+                   runtime > 60 & 
                    imdb_rating < 6.0)
 ```
 
 ``` output
-# A tibble: 1 × 15
+# A tibble: 9 × 15
   title        rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
   <chr>        <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
-1 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama  
+1 Four Christ… PG-13       88         5.7         3.6         41 Comedy  Drama  
+2 Surviving C… PG-13       91         5.4         3.5         19 Comedy  Romance
+3 A Merry Fri… PG-13       88         5.1         7.4         28 Comedy  Drama  
+4 A Californi… PG-13      106         5.8         8.2         NA Comedy  Drama  
+5 Christmas C… PG-13       85         5.4         2.7         NA Comedy  Fantasy
+6 All About C… PG-13       88         5.7         5.8         NA Comedy  Romance
+7 Christmas T… PG-13       88         5.6         9           NA Drama   <NA>   
+8 Wish Upon a… PG-13       86         5.8         9.1         NA Drama   Fantasy
+9 Christmas i… PG-13       93         4.6         8.6         NA Comedy  <NA>   
 # ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
 #   director <chr>, stars <chr>, votes <dbl>, gross <chr>
 ```
@@ -244,25 +260,25 @@ To form "or" statements we use the logical operator for "or," which is the verti
 # filters observations with "|" logical operator
 # output dataframe satisfies AT LEAST ONE of the specified conditions
 filter(xmas_movies, rating == "PG-13" | 
-                   runtime > 100 | 
+                   runtime > 60 | 
                    imdb_rating < 6.0)
 ```
 
 ``` output
-# A tibble: 398 × 15
+# A tibble: 798 × 15
    title       rating runtime imdb_rating tmdb_rating meta_score genre_1 genre_2
    <chr>       <chr>    <dbl>       <dbl>       <dbl>      <dbl> <chr>   <chr>  
  1 Love Actua… R          135         7.6         4.3         55 Comedy  Drama  
  2 Home Alone  PG         103         7.7         8.8         63 Comedy  Family 
  3 National L… PG-13       97         7.5         7.1         49 Comedy  <NA>   
- 4 How the Gr… PG         104         6.3         2.5         46 Comedy  Family 
- 5 Die Hard    R          132         8.2         1.8         72 Action  Thrill…
- 6 Home Alone… PG         120         6.9         8.1         46 Advent… Comedy 
- 7 It's a Won… PG         130         8.6         6.9         89 Drama   Family 
- 8 White Chri… <NA>       120         7.6         9           56 Comedy  Musical
- 9 Scrooged    PG-13      101         6.9         7.9         38 Comedy  Drama  
-10 Spirited    PG-13      127         6.6         3           55 Comedy  Family 
-# ℹ 388 more rows
+ 4 Elf         PG          97         7.1         6           66 Advent… Comedy 
+ 5 How the Gr… PG         104         6.3         2.5         46 Comedy  Family 
+ 6 The Grinch  PG          85         6.4         2.5         51 Animat… Comedy 
+ 7 Die Hard    R          132         8.2         1.8         72 Action  Thrill…
+ 8 Home Alone… PG         120         6.9         8.1         46 Advent… Comedy 
+ 9 The Polar … G          100         6.6         6           61 Animat… Advent…
+10 It's a Won… PG         130         8.6         6.9         89 Drama   Family 
+# ℹ 788 more rows
 # ℹ 7 more variables: genre_3 <chr>, release_year <dbl>, description <chr>,
 #   director <chr>, stars <chr>, votes <dbl>, gross <chr>
 ```
