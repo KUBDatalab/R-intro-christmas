@@ -4,7 +4,7 @@ title: 'Reference'
 
 ## Data Sets
 
-We will work with this [data set](data/movieSerie.csv) in the course. 
+We will work with this [data set](data/xmas_movies.csv) in the course. 
 
 You do not need to download the file. We will do that together during the course.
 
