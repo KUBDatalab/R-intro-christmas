@@ -61,7 +61,7 @@ of the x-axis and one containing the values for the y-axis. Here we use the $-no
 plot(xmas_movies_plotting$release_year, xmas_movies_plotting$imdb_rating)
 ```
 
-<img src="fig/04-functions-plots-rendered-first-scatterplot-1.png" style="display: block; margin: auto;" />
+<img src="fig/04-functions-plots-rendered-first-scatterplot-1.png" alt="" style="display: block; margin: auto;" />
 
 Scatterplots are useful for showing that sort for relationships in the data.
 Here it does not appear that the correlation exists; there is no clear trend.
@@ -75,7 +75,7 @@ plot(xmas_movies_plotting$release_year, xmas_movies_plotting$imdb_rating,
      ylab = "imdb rating")
 ```
 
-<img src="fig/04-functions-plots-rendered-unnamed-chunk-1-1.png" style="display: block; margin: auto;" />
+<img src="fig/04-functions-plots-rendered-unnamed-chunk-1-1.png" alt="" style="display: block; margin: auto;" />
 
 
 ## Boxplots 
@@ -85,7 +85,7 @@ We can use boxplots to visualize the distribution of number of imdb_score for ge
 boxplot(xmas_movies_plotting$imdb_rating~xmas_movies_plotting$genre_1)
 ```
 
-<img src="fig/04-functions-plots-rendered-unnamed-chunk-2-1.png" style="display: block; margin: auto;" />
+<img src="fig/04-functions-plots-rendered-unnamed-chunk-2-1.png" alt="" style="display: block; margin: auto;" />
 Two new things happens here. First, we are using a new way of telling the 
 plot function what relationship we want to visualise. 
 The function notation y~x, tells the boxplot function that we want to visualise
@@ -113,7 +113,7 @@ Another useful plottype are histograms.
 hist(xmas_movies_plotting$runtime)
 ```
 
-<img src="fig/04-functions-plots-rendered-unnamed-chunk-3-1.png" style="display: block; margin: auto;" />
+<img src="fig/04-functions-plots-rendered-unnamed-chunk-3-1.png" alt="" style="display: block; margin: auto;" />
 
 Histograms counts the number of observations in our data, that lies between 
 two values. Here the "breaks" between the values on the x-axis corresponds
@@ -278,7 +278,7 @@ as.numeric(for_time)/as.numeric(vect_time)
 ```
 
 ``` output
-[1] 6.653446
+[1] 6.798977
 ```
 More than double as fast!
 To be fair most of the time is spent outputting the results, but as a general
@@ -371,7 +371,7 @@ Warning: Removed 41 rows containing non-finite outside the scale range
 (`stat_bin()`).
 ```
 
-<img src="fig/04-functions-plots-rendered-unnamed-chunk-13-1.png" style="display: block; margin: auto;" />
+<img src="fig/04-functions-plots-rendered-unnamed-chunk-13-1.png" alt="" style="display: block; margin: auto;" />
 It looks different, and we get a warning about `binwidth`. geom_histogram automatically
 chooses 30 bins for us, and that is normally not the right number.
 
