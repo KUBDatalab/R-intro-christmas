@@ -558,8 +558,12 @@ xmas_movies %>%
 ```
 
 ``` output
-`summarise()` has grouped output by 'genre_1'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre_1 and rating.
+ℹ Output is grouped by genre_1.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre_1, rating))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -592,8 +596,12 @@ xmas_movies %>%
 ```
 
 ``` output
-`summarise()` has grouped output by 'genre_1'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre_1 and rating.
+ℹ Output is grouped by genre_1.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre_1, rating))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -631,15 +639,19 @@ xmas_movies %>%
 Warning: There were 3 warnings in `summarize()`.
 The first warning was:
 ℹ In argument: `max_imdb_rating = max(imdb_rating, na.rm = TRUE)`.
-ℹ In group 38: `genre_1 = "Documentary"` `rating = NA`.
+ℹ In group 38: `genre_1 = "Documentary"`, `rating = NA`.
 Caused by warning in `max()`:
 ! no non-missing arguments to max; returning -Inf
 ℹ Run `dplyr::last_dplyr_warnings()` to see the 2 remaining warnings.
 ```
 
 ``` output
-`summarise()` has grouped output by 'genre_1'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre_1 and rating.
+ℹ Output is grouped by genre_1.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre_1, rating))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -678,15 +690,19 @@ xmas_movies %>%
 Warning: There were 3 warnings in `summarize()`.
 The first warning was:
 ℹ In argument: `max_imdb_rating = max(imdb_rating, na.rm = TRUE)`.
-ℹ In group 38: `genre_1 = "Documentary"` `rating = NA`.
+ℹ In group 38: `genre_1 = "Documentary"`, `rating = NA`.
 Caused by warning in `max()`:
 ! no non-missing arguments to max; returning -Inf
 ℹ Run `dplyr::last_dplyr_warnings()` to see the 2 remaining warnings.
 ```
 
 ``` output
-`summarise()` has grouped output by 'genre_1'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre_1 and rating.
+ℹ Output is grouped by genre_1.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre_1, rating))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
@@ -723,15 +739,19 @@ xmas_movies %>%
 Warning: There were 3 warnings in `summarize()`.
 The first warning was:
 ℹ In argument: `max_imdb_rating = max(imdb_rating, na.rm = TRUE)`.
-ℹ In group 38: `genre_1 = "Documentary"` `rating = NA`.
+ℹ In group 38: `genre_1 = "Documentary"`, `rating = NA`.
 Caused by warning in `max()`:
 ! no non-missing arguments to max; returning -Inf
 ℹ Run `dplyr::last_dplyr_warnings()` to see the 2 remaining warnings.
 ```
 
 ``` output
-`summarise()` has grouped output by 'genre_1'. You can override using the
-`.groups` argument.
+`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre_1 and rating.
+ℹ Output is grouped by genre_1.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre_1, rating))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.
 ```
 
 ``` output
