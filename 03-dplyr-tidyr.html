@@ -323,7 +323,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Data Wrangling with dplyr and tidyr</h1>
-        <p>Last updated on 2026-02-03 |
+        <p>Last updated on 2026-02-10 |
 
         <a href="https://github.com/KUBDatalab/R-intro-christmas/edit/main/episodes/03-dplyr-tidyr.Rmd" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -958,8 +958,12 @@ run off the screen anymore. It’s one of the advantages of
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'genre_1'. You can override using the
-`.groups` argument.</code></pre>
+<pre class="output" tabindex="0"><code>`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre_1 and rating.
+ℹ Output is grouped by genre_1.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre_1, rating))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.</code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -994,8 +998,12 @@ tibble, use the <code>ungroup</code> function:</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'genre_1'. You can override using the
-`.groups` argument.</code></pre>
+<pre class="output" tabindex="0"><code>`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre_1 and rating.
+ℹ Output is grouped by genre_1.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre_1, rating))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.</code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1034,7 +1042,7 @@ to a movie or serie:</p>
 <pre class="warning" tabindex="0"><code>Warning: There were 3 warnings in `summarize()`.
 The first warning was:
 ℹ In argument: `max_imdb_rating = max(imdb_rating, na.rm = TRUE)`.
-ℹ In group 38: `genre_1 = "Documentary"` `rating = NA`.
+ℹ In group 38: `genre_1 = "Documentary"`, `rating = NA`.
 Caused by warning in `max()`:
 ! no non-missing arguments to max; returning -Inf
 ℹ Run `dplyr::last_dplyr_warnings()` to see the 2 remaining warnings.</code></pre>
@@ -1042,8 +1050,12 @@ Caused by warning in `max()`:
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'genre_1'. You can override using the
-`.groups` argument.</code></pre>
+<pre class="output" tabindex="0"><code>`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre_1 and rating.
+ℹ Output is grouped by genre_1.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre_1, rating))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.</code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1083,7 +1095,7 @@ put the group with the smallest imdb_rating first:</p>
 <pre class="warning" tabindex="0"><code>Warning: There were 3 warnings in `summarize()`.
 The first warning was:
 ℹ In argument: `max_imdb_rating = max(imdb_rating, na.rm = TRUE)`.
-ℹ In group 38: `genre_1 = "Documentary"` `rating = NA`.
+ℹ In group 38: `genre_1 = "Documentary"`, `rating = NA`.
 Caused by warning in `max()`:
 ! no non-missing arguments to max; returning -Inf
 ℹ Run `dplyr::last_dplyr_warnings()` to see the 2 remaining warnings.</code></pre>
@@ -1091,8 +1103,12 @@ Caused by warning in `max()`:
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'genre_1'. You can override using the
-`.groups` argument.</code></pre>
+<pre class="output" tabindex="0"><code>`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre_1 and rating.
+ℹ Output is grouped by genre_1.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre_1, rating))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.</code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1132,7 +1148,7 @@ imdb_rating:</p>
 <pre class="warning" tabindex="0"><code>Warning: There were 3 warnings in `summarize()`.
 The first warning was:
 ℹ In argument: `max_imdb_rating = max(imdb_rating, na.rm = TRUE)`.
-ℹ In group 38: `genre_1 = "Documentary"` `rating = NA`.
+ℹ In group 38: `genre_1 = "Documentary"`, `rating = NA`.
 Caused by warning in `max()`:
 ! no non-missing arguments to max; returning -Inf
 ℹ Run `dplyr::last_dplyr_warnings()` to see the 2 remaining warnings.</code></pre>
@@ -1140,8 +1156,12 @@ Caused by warning in `max()`:
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="output" tabindex="0"><code>`summarise()` has grouped output by 'genre_1'. You can override using the
-`.groups` argument.</code></pre>
+<pre class="output" tabindex="0"><code>`summarise()` has regrouped the output.
+ℹ Summaries were computed grouped by genre_1 and rating.
+ℹ Output is grouped by genre_1.
+ℹ Use `summarise(.groups = "drop_last")` to silence this message.
+ℹ Use `summarise(.by = c(genre_1, rating))` for per-operation grouping
+  (`?dplyr::dplyr_by`) instead.</code></pre>
 </div>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1435,8 +1455,8 @@ any links that you are not going to use.
   "url": "https://KUBDatalab.github.io/R-intro-christmas/03-dplyr-tidyr.html",
   "identifier": "https://KUBDatalab.github.io/R-intro-christmas/03-dplyr-tidyr.html",
   "dateCreated": "2025-12-24",
-  "dateModified": "2026-02-03",
-  "datePublished": "2026-02-03"
+  "dateModified": "2026-02-10",
+  "datePublished": "2026-02-10"
 }
 
   </script><script>
